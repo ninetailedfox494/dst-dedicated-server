@@ -49,11 +49,12 @@ This repository runs a 2-shard DST dedicated server with an optional mod mainten
 ├── docker/
 │   └── entrypoint.sh
 ├── env/
-│   ├── .env.example
+│   ├── .env
 │   └── mods.txt
 ├── scripts/
 │   ├── update_mods.sh
-│   └── reset_and_install_mods_docker.sh
+│   ├── reset_and_install_mods_docker.sh
+│   └── world_snapshot.sh
 └── tests/smoke/
     ├── test_docs_and_env.sh
     ├── test_readme_features_architecture.sh
@@ -123,6 +124,28 @@ docker compose restart
 docker compose down
 ```
 
+## Backup / Restore World
+
+Backup before creating a new world:
+
+```bash
+bash scripts/world_snapshot.sh backup before-new-world
+```
+
+This creates `data/backups/before-new-world-YYYYmmdd-HHMMSS.tar.gz`.
+
+Restore old world:
+
+```bash
+bash scripts/world_snapshot.sh restore before-new-world
+```
+
+List backups:
+
+```bash
+bash scripts/world_snapshot.sh list
+```
+
 ## Update Mods / Cap nhat mod
 
 ### Step 1: Edit mod list / Sua danh sach mod
@@ -183,8 +206,7 @@ docker compose up -d
 ## Security / Bao mat
 
 - Do not commit `env/.env`.
-- `env/.env.example` is a public template file.
-- `env/.env` must contain your private real `DST_CLUSTER_TOKEN`.
+- `env/.env` is a public template file. must contain your private real `DST_CLUSTER_TOKEN`.
 - Keep real token/password only in local env.
 - Rotate the token if exposed.
 - Integrated Admin, Whitelist, and Blocklist controls.
