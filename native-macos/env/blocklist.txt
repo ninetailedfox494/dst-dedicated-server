@@ -1,0 +1,2 @@
+# Blocklist user IDs (these cannot join)
+# Leave empty if not using

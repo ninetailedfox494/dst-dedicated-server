@@ -1,0 +1,2 @@
+# Whitelist user IDs (if enabled, only these can join)
+# Leave empty to allow all
