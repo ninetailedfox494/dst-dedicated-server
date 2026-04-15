@@ -1,26 +1,42 @@
-#!/usr/bin/env bash
+#!/bin/bash
+# scripts/update_mods.sh — Update mods from env/mods.txt
+
 set -euo pipefail
 
-compose_cmd() {
-  if docker compose version >/dev/null 2>&1; then
-    docker compose "$@"
-  elif command -v docker-compose >/dev/null 2>&1; then
-    docker-compose "$@"
-  else
-    echo "ERROR: docker compose command not found" >&2
-    exit 1
-  fi
-}
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+source "${SCRIPT_DIR}/scripts/_lib.sh"
 
-echo "Stopping shards..."
-compose_cmd stop dst-master dst-caves
+source_env
 
-echo "Running mod updater..."
-compose_cmd --profile tools run --rm mod-updater
+log "Stopping servers..."
+bash "${SCRIPT_DIR}/scripts/stop.sh" >/dev/null 2>&1 || true
+sleep 3
 
-echo "Starting shards..."
-compose_cmd up -d dst-master dst-caves
+log "Reading mods from env/mods.txt..."
 
-echo "Done. Check logs with:"
-echo "  docker compose logs -f dst-master"
-echo "  docker compose logs -f dst-caves"
+# Clear old mods
+log "Removing old mod files..."
+rm -rf "${MODS_DIR}"/*
+
+# Download new mods
+local mod_count=0
+while IFS= read -r line; do
+    [[ "$line" =~ ^#.*$ ]] && continue
+    [[ -z "$line" ]] && continue
+    local mod_id=$(echo "$line" | awk '{print $1}')
+    
+    if [[ -n "$mod_id" ]]; then
+        log "Downloading mod: $mod_id"
+        "${PROJECT_ROOT}/steamcmd/steamcmd.sh" \
+            +force_install_dir "${MODS_DIR}" \
+            +login anonymous \
+            +workshop_download_item 322330 "$mod_id" validate \
+            +quit
+        ((mod_count++))
+    fi
+done < "${PROJECT_ROOT}/env/mods.txt"
+
+success "Downloaded $mod_count mod(s)"
+
+log "Restarting servers..."
+bash "${SCRIPT_DIR}/scripts/start.sh"
