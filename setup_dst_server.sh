@@ -109,6 +109,61 @@ phase_3_homebrew() {
 }
 
 # ═══════════════════════════════════════════════════════════
+#  PHASE 4: STEAMCMD INSTALLATION
+# ═══════════════════════════════════════════════════════════
+
+phase_4_steamcmd() {
+    log "PHASE 4/10: Installing SteamCMD..."
+    
+    if [[ -f "${PROJECT_ROOT}/steamcmd/steamcmd.sh" ]]; then
+        log "✅ SteamCMD already installed"
+        return 0
+    fi
+    
+    log "Downloading SteamCMD..."
+    cd "${PROJECT_ROOT}/steamcmd"
+    
+    # Download and extract SteamCMD
+    curl -sqL "https://steamcdn-a.akamaihd.net/client/installer/steamcmd_osx.tar.gz" | tar zxvf - >/dev/null 2>&1
+    
+    if [[ ! -f steamcmd.sh ]]; then
+        err "SteamCMD installation failed"
+    fi
+    
+    log "✅ SteamCMD installed to: ${PROJECT_ROOT}/steamcmd/"
+}
+
+# ═══════════════════════════════════════════════════════════
+#  PHASE 5: DST SERVER INSTALLATION
+# ═══════════════════════════════════════════════════════════
+
+phase_5_dst_server() {
+    log "PHASE 5/10: Installing DST Dedicated Server..."
+    
+    local dst_binary="${PROJECT_ROOT}/dst_server/bin64/dontstarve_dedicated_server_nullrenderer_x64"
+    
+    if [[ -x "$dst_binary" ]]; then
+        log "✅ DST binary already installed"
+        return 0
+    fi
+    
+    log "Downloading DST Dedicated Server (app 343050)..."
+    log "This may take 5-10 minutes..."
+    
+    "${PROJECT_ROOT}/steamcmd/steamcmd.sh" \
+        +force_install_dir "${PROJECT_ROOT}/dst_server" \
+        +login anonymous \
+        +app_update 343050 validate \
+        +quit
+    
+    if [[ ! -x "$dst_binary" ]]; then
+        err "DST server installation failed. Binary not found at: $dst_binary"
+    fi
+    
+    log "✅ DST Server installed to: ${PROJECT_ROOT}/dst_server/"
+}
+
+# ═══════════════════════════════════════════════════════════
 #  MAIN
 # ═══════════════════════════════════════════════════════════
 
@@ -125,9 +180,13 @@ main() {
     log ""
     phase_3_homebrew
     log ""
+    phase_4_steamcmd
+    log ""
+    phase_5_dst_server
+    log ""
     
-    log "✅ Setup phases 1-3 complete!"
-    log "Continue with: bash setup_dst_server.sh --continue-phase-5"
+    log "✅ Setup phases 1-5 complete!"
+    log "Continue with: bash setup_dst_server.sh --continue-phase-6"
 }
 
 main "$@"
