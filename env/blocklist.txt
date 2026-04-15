@@ -1,1 +1,2 @@
-# Optional blocklist KU IDs, one per line
+# Blocklist user IDs (these cannot join)
+# Leave empty if not using

@@ -1,1 +1,2 @@
-# Optional whitelist KU IDs, one per line
+# Whitelist user IDs (if enabled, only these can join)
+# Leave empty to allow all

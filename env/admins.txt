@@ -1,1 +1,6 @@
-# Optional blocklist KU IDs, one per line
+# Admin user IDs (one per line)
+# Get your ID from: https://steamcommunity.com/account
+# Format: KU_XXXXXXXXXX
+
+# Example:
+# KU_J9MSQD54
