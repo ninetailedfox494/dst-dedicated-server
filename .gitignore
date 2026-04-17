@@ -1,4 +1,6 @@
-native-macos/
+native-macos/steamcmd/
+native-macos/dst_server/
+native-macos/.DS_Store
 bin/
 data/
 mods/
