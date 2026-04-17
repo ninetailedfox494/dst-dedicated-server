@@ -1,1 +1,8 @@
+native-macos/
+bin/
 data/
+mods/
+cluster/
+*.zip
+*.tar
+*.gz
