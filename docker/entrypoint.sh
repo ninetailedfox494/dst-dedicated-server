@@ -26,7 +26,13 @@ MASTER_DIR="${DST_CLUSTER_DIR}/Master"
 CAVES_DIR="${DST_CLUSTER_DIR}/Caves"
 MODS_DIR="${DST_INSTALL_DIR}/mods"
 
-mkdir -p "${MASTER_DIR}" "${CAVES_DIR}" "${MODS_DIR}"
+# Create directories with proper error handling for permission issues
+mkdir -p "${MASTER_DIR}" "${CAVES_DIR}" "${MODS_DIR}" 2>/dev/null || {
+  echo "Warning: Could not create directories directly"
+  echo "This may be a volume permissions issue."
+  echo "Please ensure data/ directory has correct permissions on host."
+  exit 1
+}
 
 cat > "${DST_CLUSTER_DIR}/cluster_token.txt" <<EOF
 ${DST_CLUSTER_TOKEN}

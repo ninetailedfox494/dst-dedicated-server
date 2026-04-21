@@ -26,7 +26,7 @@ RUN /home/dst/steamcmd/steamcmd.sh \
     +app_update 343050 validate \
     +quit
 
-COPY --chown=dst:dst docker /home/dst/docker
+COPY --chown=dst:dst . /home/dst/docker
 RUN chmod +x /home/dst/docker/entrypoint.sh
 
 ENTRYPOINT ["/home/dst/docker/entrypoint.sh"]

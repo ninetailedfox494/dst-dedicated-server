@@ -29,6 +29,7 @@ Complete guide for Don't Starve Together Dedicated Server setup on macOS.
 |------|---------|-----------|
 | **QUICKSTART.md** | 5-minute setup guide for both paths | 5 min |
 | **DOCKER_GUIDE.md** | Complete Docker setup, mods, config, ops | 15 min |
+| **DOCKER_RUN_GUIDE.md** | Step-by-step Docker execution & operations | 10 min |
 | **native-macos/README.md** | Complete native macOS setup & operations | 15 min |
 
 ### **Configuration Reference**
@@ -44,8 +45,8 @@ Complete guide for Don't Starve Together Dedicated Server setup on macOS.
 
 ### **I want to use Docker:**
 1. Verify: `docker --version && docker-compose --version`
-2. Read: `DOCKER_GUIDE.md`
-3. Follow: Quick Start section in DOCKER_GUIDE.md
+2. Read: `DOCKER_RUN_GUIDE.md` (practical step-by-step)
+3. Or read: `DOCKER_GUIDE.md` (detailed reference)
 4. If stuck: Check TROUBLESHOOTING.md
 
 ### **I want native macOS:**
@@ -179,15 +180,16 @@ Complete guide for Don't Starve Together Dedicated Server setup on macOS.
 |------|------|
 | **Choose Docker or native** | SETUP_COMPARISON.md |
 | **Setup in 5 minutes** | QUICKSTART.md |
-| **Understand Docker setup** | DOCKER_GUIDE.md |
+| **Docker step-by-step** | DOCKER_RUN_GUIDE.md |
+| **Docker reference** | DOCKER_GUIDE.md |
 | **Understand native macOS** | native-macos/README.md |
 | **Mods configuration** | CONFIG_GUIDE.md or DOCKER_GUIDE.md |
-| **Server operations** | DOCKER_GUIDE.md or native-macos/README.md |
+| **Server operations** | DOCKER_RUN_GUIDE.md or native-macos/README.md |
 | **Variable reference** | CONFIG_GUIDE.md |
 | **Something broken** | TROUBLESHOOTING.md |
-| **Network/ports** | DOCKER_GUIDE.md "Port Configuration" |
-| **Backups & restore** | native-macos/README.md or DOCKER_GUIDE.md |
-| **Admin/whitelist/blocklist** | CONFIG_GUIDE.md or native-macos/README.md |
+| **Network/ports** | DOCKER_RUN_GUIDE.md "Port Already in Use" |
+| **Backups & restore** | native-macos/README.md or DOCKER_RUN_GUIDE.md |
+| **Admin/whitelist/blocklist** | CONFIG_GUIDE.md or DOCKER_RUN_GUIDE.md |
 
 ---
 

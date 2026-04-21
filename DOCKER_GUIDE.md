@@ -1,5 +1,7 @@
 # 🐳 Docker DST Server Setup Guide
 
+> **📌 Quick Start?** → See [`DOCKER_RUN_GUIDE.md`](DOCKER_RUN_GUIDE.md) for step-by-step instructions to run Docker immediately.
+
 ## Which Docker Version?
 
 - **Docker**: 20.10+ (any modern version works)
