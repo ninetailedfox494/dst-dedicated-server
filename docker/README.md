@@ -1,119 +1,266 @@
-# DST Dedicated Server — Docker Setup
+# 🐳 Docker DST Server Setup
 
-Complete Docker setup for running Don't Starve Together Dedicated Server with containerization.
+Complete guide for running Don't Starve Together Dedicated Server with Docker.
 
-## Quick Start
+## Prerequisites
 
 ```bash
-# 1. Configure environment
-cp env/.env.example .env
-vi .env
+docker --version          # 20.10+
+docker-compose --version  # 2.0+
+```
 
-# 2. Build and run
+## Quick Start (5 Minutes)
+
+```bash
+# 1. Initialize environment
+bash setup/init_docker_env.sh
+
+# 2. Configure
+nano env/.env             # Add your cluster token
+
+# 3. Start
 docker-compose up -d
 
-# 3. Check logs
+# 4. Watch logs
 docker-compose logs -f
-
-# 4. Control server
-docker-compose stop
-docker-compose start
-docker-compose restart
 ```
 
-## Directory Structure
-
-```
-docker/
-├── docker-compose.yml       # Docker Compose configuration
-├── Dockerfile              # Container image definition
-├── entrypoint.sh           # Container entrypoint script
-├── templates/              # Configuration templates
-│   └── ...
-└── setup/                  # Setup utilities
-```
-
-## Docker Compose Services
-
-- **dst-master**: Master server (SSA)
-- **dst-caves**: Caves server (non-master)
-- **volumes**: Persistent server data
+---
 
 ## Configuration
 
-Edit `docker-compose.yml` and `.env` for:
-- Server ports
-- Player limits
-- Game mode (endless, survival, wilderness)
-- Admin users
-- Mods list
+### Required Settings (env/.env)
 
-## Volume Mounts
+```bash
+# REQUIRED - Get from https://accounts.klei.com/account/game/server
+DST_CLUSTER_TOKEN=pds-XXXXX...
+```
 
-Data persistence across container restarts:
+### Server Identity
+
+| Variable | Default | Description |
+|----------|---------|-------------|
+| `DST_CLUSTER_NAME` | `MyDediServer` | Folder name (no spaces) |
+| `DST_CLUSTER_DISPLAY_NAME` | `My DST Server` | Name in server browser |
+| `DST_CLUSTER_PASSWORD` | (empty) | Join password (empty = public) |
+| `DST_CLUSTER_DESCRIPTION` | `A DST Server` | Browser description |
+
+### Gameplay Settings
+
+| Variable | Default | Options |
+|----------|---------|---------|
+| `DST_GAME_MODE` | `endless` | `endless`, `survival`, `wilderness` |
+| `DST_MAX_PLAYERS` | `6` | 1–64 |
+| `DST_WORLD_SIZE` | `small` | `small`, `medium`, `large` |
+| `DST_PVP` | `false` | `true` or `false` |
+| `DST_PAUSE_WHEN_EMPTY` | `true` | Pause with no players |
+| `DST_TICK_RATE` | `15` | 10–30 (higher = more CPU) |
+
+### Access Control Files
+
+| File | Purpose |
+|------|---------|
+| `env/admins.txt` | Admin Klei user IDs (one per line) |
+| `env/whitelist.txt` | Allowed players only (empty = all) |
+| `env/blocklist.txt` | Banned players |
+
+---
+
+## Mods
+
+### Add Mods via mods.txt (Recommended)
+
+```bash
+# Edit mods file
+nano env/mods.txt
+
+# Add mod IDs (one per line):
+# 2798599672    # Display Attack Range
+# 374550642     # Increased Stack Size
+
+# Download and apply
+docker-compose run --rm mod-updater
+docker-compose restart dst-master dst-caves
+```
+
+### Find Mod IDs
+
+From Steam Workshop URL:
+```
+https://steamcommunity.com/sharedfiles/filedetails/?id=2798599672
+                                                        ^^^^^^^^^^ ID
+```
+
+---
+
+## Daily Operations
+
+### Start/Stop/Restart
+
+```bash
+docker-compose up -d              # Start
+docker-compose stop               # Stop (keeps data)
+docker-compose down               # Stop and remove containers
+docker-compose restart            # Restart
+docker-compose restart dst-master # Restart one shard
+```
+
+### View Logs
+
+```bash
+docker-compose logs -f            # All services
+docker-compose logs -f dst-master # Master only
+docker-compose logs --tail=50     # Last 50 lines
+```
+
+### Check Status
+
+```bash
+docker-compose ps                 # Container status
+docker stats dst-master dst-caves # Resource usage
+```
+
+### Backup World
+
+```bash
+# Create backup
+docker-compose exec dst-master tar -czf /tmp/backup.tar.gz \
+  /home/dst/.klei/DoNotStarveTogether
+
+# Copy to host
+docker cp $(docker-compose ps -q dst-master):/tmp/backup.tar.gz ./backups/
+```
+
+### Update Mods
+
+```bash
+docker-compose run --rm mod-updater
+docker-compose restart dst-master dst-caves
+```
+
+---
+
+## Ports
+
+| Port | Service |
+|------|---------|
+| 10999/UDP | Master Server |
+| 10998/UDP | Caves Server |
+| 27016/UDP | Steam Query (Master) |
+| 27017/UDP | Steam Query (Caves) |
+
+### Change Ports
+
+Edit `docker-compose.yml`:
 ```yaml
-volumes:
-  - ./data:/dst/data           # Server data
-  - ./logs:/dst/logs           # Server logs
-  - ./backups:/dst/backups     # World backups
+ports:
+  - "11999:10999/udp"  # Change left number
 ```
 
-## Networking
+---
 
-- **Master**: UDP port 10999
-- **Caves**: UDP port 10998
-- Internal Docker network for inter-server communication
+## Container Architecture
 
-## Logs
+**Three containers:**
+1. **dst-master** - Master shard (world gen, saves)
+2. **dst-caves** - Caves shard (connects to master)
+3. **mod-updater** - On-demand mod downloads
 
-```bash
-# All services
-docker-compose logs -f
-
-# Specific service
-docker-compose logs -f dst-master
-docker-compose logs -f dst-caves
+**Shared volumes:**
+```
+data/cluster/   # Shared config
+data/master/    # Master shard data
+data/caves/     # Caves shard data
+data/mods/      # Downloaded mods
 ```
 
-## Backup
-
-```bash
-# Backup volume
-docker run --rm -v data:/data -v $(pwd)/backups:/backup \
-  alpine tar -czf /backup/dst_backup_$(date +%s).tar.gz -C / data
-```
+---
 
 ## Troubleshooting
 
-- **Port conflict**: Change ports in `docker-compose.yml`
-- **Permission denied**: Check volume permissions
-- **Out of memory**: Increase Docker memory allocation
-- **Mod download fails**: Check internet connectivity
+### Port Already in Use
 
-See `../TROUBLESHOOTING.md` for complete guide.
+```bash
+lsof -i :10999
+kill -9 <PID>
+# Or change ports in docker-compose.yml
+```
 
-## Advantages over Native Setup
+### Mods Not Loading
 
-- **Portability**: Same setup works on Linux, macOS, Windows
-- **Isolation**: Separate from system dependencies
-- **Easy updates**: Rebuild image with latest DST version
-- **Multiple instances**: Run multiple servers on same host
-- **Rollback**: Simple version management
+```bash
+docker-compose logs dst-master | grep -i mod
+ls data/mods/workshop_*/
+docker-compose run --rm mod-updater
+docker-compose restart
+```
 
-## Disadvantages
+### Container Won't Start
 
-- Slightly higher resource overhead
-- Requires Docker installation and knowledge
-- Network overhead for inter-container communication
+```bash
+docker-compose logs dst-master
+cat env/.env | grep DST_CLUSTER_TOKEN
+docker-compose up -d --build
+```
 
-## Production Considerations
+### Permission Issues
 
-- Use **network volumes** for multi-server setups
-- Enable **resource limits** in docker-compose.yml
-- Implement **automatic backups** with cron/systemd
-- Monitor **disk space** for long-running servers
-- Set up **health checks** in Dockerfile
+```bash
+sudo chown -R $(whoami):$(whoami) data/
+docker-compose up -d
+```
 
-## Support
+See **[../TROUBLESHOOTING.md](../TROUBLESHOOTING.md)** for more solutions.
 
-See `../TROUBLESHOOTING.md` and `../CONFIG_GUIDE.md` for detailed help.
+---
+
+## Performance Tips
+
+- **Memory**: 1-2GB per shard recommended
+- **CPU**: 2+ cores
+- **Disk**: 2-5GB for game + mods
+
+Add limits in `docker-compose.yml`:
+```yaml
+deploy:
+  resources:
+    limits:
+      memory: 2G
+```
+
+---
+
+## File Structure After Setup
+
+```
+docker/
+├── docker-compose.yml
+├── Dockerfile
+├── entrypoint.sh
+├── env/
+│   ├── .env              # Your config
+│   ├── mods.txt          # Mod list
+│   └── admins.txt        # Admin users
+├── data/
+│   ├── cluster/          # Generated configs
+│   ├── master/           # Master shard
+│   ├── caves/            # Caves shard
+│   └── mods/             # Downloaded mods
+└── setup/
+    └── init_docker_env.sh
+```
+
+---
+
+## Quick Reference
+
+```bash
+# Essential commands
+docker-compose up -d                 # Start
+docker-compose down                  # Stop
+docker-compose ps                    # Status
+docker-compose logs -f               # Logs
+docker-compose restart               # Restart
+docker-compose run --rm mod-updater  # Update mods
+docker-compose exec dst-master bash  # Shell access
+```
