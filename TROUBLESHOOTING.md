@@ -239,10 +239,28 @@ docker-compose up -d --build
 
 ### Permission Issues (Docker)
 
+**Symptom:** Container starts but logs show "Permission denied" when writing to `data/` folders.
+
+**Why it happens:** Docker container runs as non-root user (UID 1000), but host folders were created by root or different user.
+
 ```bash
-sudo chown -R $(whoami):$(whoami) data/
+# Check current ownership
+ls -la data/
+
+# Fix: Change ownership to match container user (UID 1000)
+sudo chown -R 1000:1000 data/
+
+# Restart
+docker-compose down
 docker-compose up -d
 ```
+
+**Alternative (less secure):**
+```bash
+sudo chmod -R 777 data/
+```
+
+**On VPS:** If you created folders as root, this is the most common cause. Always run `chown` after creating data directories.
 
 ### Out of Memory (Docker)
 
@@ -266,4 +284,6 @@ docker-compose restart
 
 ---
 
-For more help, see `README.md` and `CONFIG_GUIDE.md`.
+For more help, see the platform-specific guides:
+- **Docker:** [docker/README.md](docker/README.md)
+- **macOS Native:** [native-macos/README.md](native-macos/README.md)
