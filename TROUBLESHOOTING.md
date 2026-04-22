@@ -227,6 +227,43 @@ bash scripts/status.sh >> diagnostics.txt
 - Output of: `cat env/.env` (remove token)
 - Output of: `cat env/mods.txt`
 
+## Docker-Specific Issues
+
+### Container Won't Start
+
+```bash
+docker-compose logs dst-master
+cat env/.env | grep DST_CLUSTER_TOKEN
+docker-compose up -d --build
+```
+
+### Permission Issues (Docker)
+
+```bash
+sudo chown -R $(whoami):$(whoami) data/
+docker-compose up -d
+```
+
+### Out of Memory (Docker)
+
+Increase Docker memory in Docker Desktop settings, or add limits:
+```yaml
+# docker-compose.yml
+deploy:
+  resources:
+    limits:
+      memory: 2G
+```
+
+### Mods Not Loading (Docker)
+
+```bash
+docker-compose logs dst-master | grep -i mod
+ls data/mods/workshop_*/
+docker-compose run --rm mod-updater
+docker-compose restart
+```
+
 ---
 
 For more help, see `README.md` and `CONFIG_GUIDE.md`.
