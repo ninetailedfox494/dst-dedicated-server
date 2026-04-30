@@ -1,63 +1,47 @@
+version: "3.8"
+
 services:
-  dst-master:
+  dst:
     build: .
     image: dst-dedicated:latest
+
     env_file:
       - ./env/.env
-    environment:
-      DST_SHARD_NAME: Master
+
     ports:
-      - "10999:10999/udp"
+      - "10999:10999/udp" # Master game
       - "27016:27016/udp"
       - "8766:8766/udp"
-    volumes:
-      - ./data/cluster:/home/dst/.klei/DoNotStarveTogether/${DST_CLUSTER_NAME}
-      - ./data/master:/home/dst/.klei/DoNotStarveTogether/${DST_CLUSTER_NAME}/Master
-      - ./data/mods:/home/dst/dst_server/mods
-    restart: unless-stopped
-    healthcheck:
-      test: ["CMD-SHELL", "pgrep -f dontstarve_dedicated_server_nullrenderer_x64 >/dev/null"]
-      interval: 30s
-      timeout: 5s
-      retries: 5
 
-  dst-caves:
-    image: dst-dedicated:latest
-    env_file:
-      - ./env/.env
-    environment:
-      DST_SHARD_NAME: Caves
-    ports:
-      - "10998:10998/udp"
+      - "10998:10998/udp" # Caves game
       - "27017:27017/udp"
       - "8767:8767/udp"
+
     volumes:
-      - ./data/cluster:/home/dst/.klei/DoNotStarveTogether/${DST_CLUSTER_NAME}
-      - ./data/caves:/home/dst/.klei/DoNotStarveTogether/${DST_CLUSTER_NAME}/Caves
+      - ./data:/home/dst/.klei/DoNotStarveTogether
       - ./data/mods:/home/dst/dst_server/mods
+
+      # 🔥 QUAN TRỌNG: persist Steam Workshop
+      - ./steam:/home/dst/.steam
+
     restart: unless-stopped
-    healthcheck:
-      test: ["CMD-SHELL", "pgrep -f dontstarve_dedicated_server_nullrenderer_x64 >/dev/null"]
-      interval: 30s
-      timeout: 5s
-      retries: 5
+
+    # vẫn dùng root nhưng sẽ drop về dst trong entrypoint
+    user: "0:0"
 
   mod-updater:
     image: dst-dedicated:latest
     env_file:
       - ./env/.env
-    environment:
-      DST_SHARD_NAME: Master
-      MODS_FILE: /workspace/env/mods.txt
     command: ["/workspace/scripts/reset_and_install_mods_docker.sh"]
     volumes:
       - ./:/workspace
-      - ./data/cluster:/home/dst/.klei/DoNotStarveTogether/${DST_CLUSTER_NAME}
-      - ./data/master:/home/dst/.klei/DoNotStarveTogether/${DST_CLUSTER_NAME}/Master
-      - ./data/caves:/home/dst/.klei/DoNotStarveTogether/${DST_CLUSTER_NAME}/Caves
+      - ./data:/home/dst/.klei/DoNotStarveTogether
       - ./data/mods:/home/dst/dst_server/mods
+      - ./steam:/home/dst/.steam
     profiles:
       - tools
+    user: "0:0"
 
   access-manager:
     image: dst-dedicated:latest
@@ -66,6 +50,7 @@ services:
     command: ["/workspace/scripts/set_access_lists.sh"]
     volumes:
       - ./:/workspace
-      - ./data/cluster:/home/dst/.klei/DoNotStarveTogether/${DST_CLUSTER_NAME}
+      - ./data:/home/dst/.klei/DoNotStarveTogether
     profiles:
       - tools
+    user: "0:0"

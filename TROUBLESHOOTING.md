@@ -237,6 +237,53 @@ cat env/.env | grep DST_CLUSTER_TOKEN
 docker-compose up -d --build
 ```
 
+### Error: "Could not create directories directly"
+
+**Symptom:** Containers exit immediately with repeated warnings:
+```
+Warning: Could not create directories directly
+This may be a volume permissions issue.
+Please ensure data/ directory has correct permissions on host.
+```
+
+**Cause:** The `data/` directory doesn't exist or has wrong permissions.
+
+**Solution:**
+```bash
+# 1. Run the init script (creates directories with correct permissions)
+./setup/init_docker_env.sh
+
+# 2. Or manually create and set permissions
+mkdir -p data/{cluster,master,caves,mods}
+chmod -R 777 data/
+
+# 3. Restart
+docker-compose down && docker-compose up -d
+```
+
+### Error: "libcurl-gnutls.so.4: cannot open shared object file"
+
+**Symptom:** Container starts but crashes with:
+```
+error while loading shared libraries: libcurl-gnutls.so.4: cannot open shared object file: No such file or directory
+```
+
+**Cause:** Missing library in Docker image.
+
+**Solution:** Rebuild the image with updated dependencies:
+```bash
+docker-compose build --no-cache
+docker-compose up -d
+```
+
+If issue persists, ensure Dockerfile includes `libcurl4-gnutls-dev:i386`:
+```dockerfile
+RUN apt-get install -y --no-install-recommends \
+    libcurl4:i386 \
+    libcurl4-gnutls-dev:i386 \
+    ...
+```
+
 ### Permission Issues (Docker)
 
 **Symptom:** Container starts but logs show "Permission denied" when writing to `data/` folders.

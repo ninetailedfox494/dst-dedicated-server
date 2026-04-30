@@ -4,8 +4,18 @@
 
 set -euo pipefail
 
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-cd "$SCRIPT_DIR"
+# Get the docker/ directory (parent of setup/)
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+DOCKER_DIR="$(cd "${SCRIPT_DIR}/.." && pwd)"
+
+# Validate we're in the right place
+if [[ ! -f "${DOCKER_DIR}/docker-compose.yml" ]]; then
+  echo "ERROR: Cannot find docker-compose.yml in ${DOCKER_DIR}" >&2
+  echo "Please run this script from the docker/setup/ directory" >&2
+  exit 1
+fi
+
+cd "$DOCKER_DIR"
 
 echo "🐳 Initializing Docker DST Server Environment"
 echo "================================================"
@@ -16,6 +26,10 @@ mkdir -p env
 mkdir -p data/{cluster,master,caves,mods}
 mkdir -p backups
 mkdir -p logs
+
+# Set permissions for Docker container (runs as uid 1000)
+echo "🔐 Setting permissions for Docker..."
+chmod -R 777 data/
 
 # Check if .env exists
 if [[ -f "env/.env" ]]; then
