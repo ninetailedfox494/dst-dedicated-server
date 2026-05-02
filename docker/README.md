@@ -44,6 +44,7 @@ DST_CLUSTER_TOKEN=pds-XXXXX...
 | `DST_CLUSTER_DISPLAY_NAME` | `My DST Server` | Name in server browser |
 | `DST_CLUSTER_PASSWORD` | (empty) | Join password (empty = public) |
 | `DST_CLUSTER_DESCRIPTION` | `A DST Server` | Browser description |
+| `DST_CLUSTER_KEY` | `defaultPass` | Shared key between shards |
 
 ### Gameplay Settings
 
@@ -101,9 +102,29 @@ https://steamcommunity.com/sharedfiles/filedetails/?id=2798599672
 docker-compose up -d              # Start
 docker-compose stop               # Stop (keeps data)
 docker-compose down               # Stop and remove containers
-docker-compose restart            # Restart
-docker-compose restart dst-master # Restart one shard
+docker-compose restart dst        # Restart server and reload env/.env
 ```
+
+### Safe Reconfigure (No Data Loss)
+
+```bash
+# 1) Edit config
+nano env/.env
+
+# 2) Recreate container safely (keeps ./data and ./steam)
+docker-compose down --remove-orphans
+
+# 3) Rebuild image with latest entrypoint/template
+docker-compose build dst
+
+# 4) Start server
+docker-compose up -d dst
+
+# 5) Verify generated cluster config
+docker-compose exec dst sh -lc 'cat /home/dst/.klei/DoNotStarveTogether/${DST_CLUSTER_NAME}/cluster.ini'
+```
+
+⚠️ Never run `docker-compose down -v` unless you intentionally want to remove Docker volumes.
 
 ### View Logs
 
@@ -201,6 +222,15 @@ docker-compose restart
 docker-compose logs dst-master
 cat env/.env | grep DST_CLUSTER_TOKEN
 docker-compose up -d --build
+```
+
+### `ContainerConfig` Error During Recreate
+
+`docker-compose` v1.29.2 can fail with `KeyError: 'ContainerConfig'` when using `--force-recreate`.
+
+```bash
+docker-compose down --remove-orphans
+docker-compose up -d dst
 ```
 
 ### Permission Issues

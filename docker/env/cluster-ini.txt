@@ -1,0 +1,28 @@
+[GAMEPLAY]
+game_mode = ${DST_GAME_MODE}
+max_players = ${DST_MAX_PLAYERS}
+pvp = ${DST_PVP}
+pause_when_empty = ${DST_PAUSE_WHEN_EMPTY}
+vote_enabled = ${DST_VOTE_ENABLED}
+
+[NETWORK]
+cluster_name = ${DST_CLUSTER_DISPLAY_NAME}
+cluster_description = ${DST_CLUSTER_DESCRIPTION}
+cluster_password = ${DST_CLUSTER_PASSWORD}
+cluster_intention = cooperative
+
+[SHARD]
+shard_enabled = true
+bind_ip = 0.0.0.0
+master_ip = 127.0.0.1
+master_port = 10888
+cluster_key = ${DST_CLUSTER_KEY}
+
+[STEAM]
+master_server_port = 27016
+authentication_port = 8766
+
+[MISC]
+console_enabled = true
+max_snapshots = ${DST_BACKUP_COUNT}
+tick_rate = ${DST_TICK_RATE}

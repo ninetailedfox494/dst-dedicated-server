@@ -18,6 +18,7 @@ services:
       - "8767:8767/udp"
 
     volumes:
+      - ./env:/home/dst/docker/env:ro
       - ./data:/home/dst/.klei/DoNotStarveTogether
       - ./data/mods:/home/dst/dst_server/mods
 

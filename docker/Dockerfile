@@ -12,6 +12,7 @@ RUN dpkg --add-architecture i386 && \
       tar \
       gosu \
       tini \
+      gettext-base \
       locales \
       lib32gcc-s1 \
       libstdc++6:i386 \

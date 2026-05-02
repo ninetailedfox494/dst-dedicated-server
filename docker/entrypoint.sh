@@ -1,6 +1,38 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+load_runtime_env_file() {
+  local env_file="$1"
+  local line key value
+
+  [[ -f "${env_file}" ]] || return 0
+
+  while IFS= read -r line || [[ -n "${line}" ]]; do
+    # Remove comments and skip empty lines.
+    line="${line%%#*}"
+    [[ -n "${line//[[:space:]]/}" ]] || continue
+
+    if [[ "${line}" =~ ^[[:space:]]*([A-Za-z_][A-Za-z0-9_]*)[[:space:]]*=(.*)$ ]]; then
+      key="${BASH_REMATCH[1]}"
+      value="${BASH_REMATCH[2]}"
+
+      # Trim value whitespace and optional surrounding quotes.
+      value="${value#"${value%%[![:space:]]*}"}"
+      value="${value%"${value##*[![:space:]]}"}"
+      if [[ "${value}" =~ ^\"(.*)\"$ ]]; then
+        value="${BASH_REMATCH[1]}"
+      elif [[ "${value}" =~ ^\'(.*)\'$ ]]; then
+        value="${BASH_REMATCH[1]}"
+      fi
+
+      export "${key}=${value}"
+    fi
+  done < "${env_file}"
+}
+
+RUNTIME_ENV_FILE="${DST_RUNTIME_ENV_FILE:-/home/dst/docker/env/.env}"
+load_runtime_env_file "${RUNTIME_ENV_FILE}"
+
 required_vars=(DST_CLUSTER_NAME DST_CLUSTER_TOKEN)
 for var in "${required_vars[@]}"; do
   if [[ -z "${!var:-}" ]]; then
@@ -24,7 +56,6 @@ export HOME=/home/dst
 
 # ---------------- PERMISSION ----------------
 mkdir -p "${DST_INSTALL_DIR}" "${DST_CLUSTER_ROOT}"
-chown -R dst:dst /home/dst
 
 # =========================================================
 # 🔥 FIX STEAM WORKSHOP (REAL FIX)
@@ -55,7 +86,7 @@ cat > "${STEAM_APPS}/libraryfolders.vdf" <<EOF
 }
 EOF
 
-chown -R dst:dst /home/dst/.steam
+chown -R dst:dst /home/dst/.steam "${DST_CLUSTER_ROOT}" "${DST_INSTALL_DIR}"
 
 # =========================================================
 
@@ -83,22 +114,47 @@ mkdir -p "${MASTER_DIR}" "${CAVES_DIR}" "${MODS_DIR}"
 
 echo "${DST_CLUSTER_TOKEN}" > "${DST_CLUSTER_DIR}/cluster_token.txt"
 
-cat > "${DST_CLUSTER_DIR}/cluster.ini" <<EOF
-[GAMEPLAY]
-game_mode = endless
-max_players = 6
+# Set default values for optional environment variables
+export DST_GAME_MODE="${DST_GAME_MODE:-endless}"
+export DST_MAX_PLAYERS="${DST_MAX_PLAYERS:-6}"
+export DST_PVP="${DST_PVP:-false}"
+export DST_PAUSE_WHEN_EMPTY="${DST_PAUSE_WHEN_EMPTY:-true}"
+export DST_VOTE_ENABLED="${DST_VOTE_ENABLED:-true}"
+export DST_CLUSTER_DISPLAY_NAME="${DST_CLUSTER_DISPLAY_NAME:-${DST_CLUSTER_NAME}}"
+export DST_CLUSTER_DESCRIPTION="${DST_CLUSTER_DESCRIPTION:-A Dont Starve Together Server}"
+export DST_CLUSTER_PASSWORD="${DST_CLUSTER_PASSWORD:-}"
+export DST_BACKUP_COUNT="${DST_BACKUP_COUNT:-20}"
+export DST_TICK_RATE="${DST_TICK_RATE:-15}"
+export DST_CLUSTER_KEY="${DST_CLUSTER_KEY:-defaultPass}"
 
-[NETWORK]
-cluster_name = ${DST_CLUSTER_NAME}
-cluster_intention = cooperative
+# Read cluster.ini template and substitute variables
+CLUSTER_INI_TEMPLATE="/home/dst/docker/env/cluster-ini.txt"
+if [[ -f "${CLUSTER_INI_TEMPLATE}" ]]; then
+  envsubst < "${CLUSTER_INI_TEMPLATE}" > "${DST_CLUSTER_DIR}/cluster.ini"
+else
+  echo "ERROR: ${CLUSTER_INI_TEMPLATE} not found" >&2
+  exit 1
+fi
 
-[SHARD]
-shard_enabled = true
-bind_ip = 0.0.0.0
-master_ip = 127.0.0.1
-master_port = 10888
-cluster_key = defaultPass
-EOF
+# Copy admin/whitelist/blocklist files to cluster directory
+ENV_DIR="/home/dst/docker/env"
+for access_file in adminlist.txt whitelist.txt blocklist.txt; do
+  src_file="${ENV_DIR}/${access_file}"
+  if [[ "${access_file}" == "adminlist.txt" ]]; then
+    # Map admins.txt to adminlist.txt in cluster
+    src_file="${ENV_DIR}/admins.txt"
+  fi
+  
+  if [[ -f "${src_file}" ]]; then
+    # Filter out comments (both full-line and inline) and empty lines, keep only KU_ IDs
+    sed 's/#.*//' "${src_file}" | awk '{print $1}' | grep -v '^[[:space:]]*$' > "${DST_CLUSTER_DIR}/${access_file}" || true
+    echo "Copied ${access_file} to cluster directory"
+  else
+    # Create empty file if source doesn't exist
+    touch "${DST_CLUSTER_DIR}/${access_file}"
+    echo "Created empty ${access_file} in cluster directory"
+  fi
+done
 
 # Master
 cat > "${MASTER_DIR}/server.ini" <<EOF
@@ -270,8 +326,6 @@ else
 fi
 
 rm -f "${TMP_MOD_SETUP}" "${TMP_MODOVERRIDES}"
-
-chown -R dst:dst "${DST_CLUSTER_ROOT}" "${DST_INSTALL_DIR}"
 
 # ---------------- RUN ----------------
 BIN="${DST_INSTALL_DIR}/bin64/dontstarve_dedicated_server_nullrenderer_x64"

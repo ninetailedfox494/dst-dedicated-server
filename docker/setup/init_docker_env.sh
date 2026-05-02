@@ -54,6 +54,9 @@ DST_CLUSTER_DESCRIPTION=A Don't Starve Together Server
 # Password to join (leave empty for public server)
 DST_CLUSTER_PASSWORD=
 
+# Shared key for Master/Caves shard connection
+DST_CLUSTER_KEY=defaultPass
+
 # ========== GAMEPLAY SETTINGS ==========
 # Game mode: endless, survival, or wilderness
 DST_GAME_MODE=endless
@@ -76,6 +79,9 @@ DST_PVP=false
 
 # Enable vote to skip
 DST_VOTE_ENABLED=true
+
+# ========== BACKUP (IMPORTANT) ==========
+DST_BACKUP_COUNT=20
 EOF
   echo "   ✅ Created env/.env (edit with your settings)"
 fi
