@@ -37,4 +37,14 @@ Overwrite_Mods = {
     },
     enabled = true 
   }, 
+  -- Cấu hình Global Positions (Tối ưu hiệu năng)
+  ["workshop-375850593"] = {
+    configuration_options = {
+      UpdatePeriod = 10, -- Tăng lên 1 giây hoặc cao hơn
+      ShareAttributes = false, 
+      ShowPlayerStatus = false,
+      ShowPlayerTalking = false -- Tắt cái này cũng giúp nhẹ máy hơn
+    },
+    enabled = true 
+  }
 }
