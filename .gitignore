@@ -1,4 +1,15 @@
 docker/env/.env
+# Bỏ qua dữ liệu người dùng Steam
+docker/steam/steam/userdata/
+
+# Bỏ qua các file log và cache của Steam
+docker/steam/steam/logs/
+docker/steam/steam/.crash
+docker/steam/steam/config/
+
+# Bỏ qua các file tải tạm thời của Steam
+docker/steam/steam/steamapps/downloading/
+
 native-macos/steamcmd/
 native-macos/dst_server/
 native-macos/.DS_Store
