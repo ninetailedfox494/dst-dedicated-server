@@ -266,6 +266,7 @@ Direct editing (may be overwritten by setup):
 | `data/caves/server.ini` | Caves network |
 | `data/master/modoverrides.lua` | Mod settings |
 | `data/master/worldgenoverride.lua` | World generation |
+| `data/caves/worldgenoverride.lua` | Cave world generation |
 
 Always backup before manual edits:
 ```bash
