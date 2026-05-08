@@ -84,6 +84,9 @@ docker-compose run --rm mod-updater
 docker-compose restart dst-master dst-caves
 ```
 
+If `env/mods.txt` is missing or has no valid IDs, existing `modoverrides.lua` is now kept to avoid accidental mod loss during config updates.  
+Set `DST_ALLOW_EMPTY_MODS_SYNC=true` in `env/.env` only if you intentionally want an empty mod config applied.
+
 ### Find Mod IDs
 
 From Steam Workshop URL:

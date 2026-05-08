@@ -22,10 +22,51 @@ fi
 mkdir -p "${MODS_DEST}" "${MASTER_DIR}" "${CAVES_DIR}"
 
 MOD_IDS=()
-while IFS= read -r line; do
-  line="$(echo "${line}" | sed 's/[[:space:]]//g')"
-  if [[ -n "${line}" && "${line}" != \#* ]]; then
-    MOD_IDS+=("${line}")
+in_mods_table=0
+
+add_mod_id() {
+  local id="$1"
+  local existing
+  [[ -n "${id}" ]] || return 0
+  for existing in "${MOD_IDS[@]:-}"; do
+    if [[ "${existing}" == "${id}" ]]; then
+      return 0
+    fi
+  done
+  MOD_IDS+=("${id}")
+}
+
+while IFS= read -r raw_line || [[ -n "${raw_line}" ]]; do
+  line="${raw_line%$'\r'}"
+
+  # Support explicit overwrite blocks: ["workshop-123456"] = { ... }
+  if [[ "${line}" =~ \[\"workshop-([0-9]+)\"\][[:space:]]*=[[:space:]]*\{ ]]; then
+    add_mod_id "${BASH_REMATCH[1]}"
+  fi
+
+  if [[ ${in_mods_table} -eq 1 ]]; then
+    if [[ "${line}" =~ ^[[:space:]]*}[[:space:]]*,?[[:space:]]*$ ]]; then
+      in_mods_table=0
+      continue
+    fi
+    stripped="${line%%#*}"
+    stripped="${stripped%%--*}"
+    if [[ "${stripped}" =~ ^[[:space:]]*([0-9]+)[[:space:]]*$ ]]; then
+      add_mod_id "${BASH_REMATCH[1]}"
+    fi
+    continue
+  fi
+
+  if [[ "${line}" =~ ^[[:space:]]*Mods[[:space:]]*=[[:space:]]*\{[[:space:]]*$ ]]; then
+    in_mods_table=1
+    continue
+  fi
+
+  # Backward compatibility: one numeric mod ID per line.
+  stripped="${line%%#*}"
+  stripped="${stripped%%--*}"
+  if [[ "${stripped}" =~ ^[[:space:]]*([0-9]+)[[:space:]]*$ ]]; then
+    add_mod_id "${BASH_REMATCH[1]}"
   fi
 done < "${MODS_FILE}"
 if [[ ${#MOD_IDS[@]} -eq 0 ]]; then

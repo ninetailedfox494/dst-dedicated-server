@@ -100,17 +100,55 @@ sync_mod_configs() {
     local runtime_caves_dir="${runtime_cluster_dir}/Caves"
     local runtime_mods_dir="${runtime_cluster_dir}/mods"
     local -a mod_ids=()
-    local line
+    local line stripped
+    local in_mods_table=0
+    local mod_id
+
+    add_mod_id() {
+        local id="$1"
+        local existing
+        [[ -n "$id" ]] || return 0
+        for existing in "${mod_ids[@]:-}"; do
+            [[ "$existing" == "$id" ]] && return 0
+        done
+        mod_ids+=("$id")
+    }
 
     if [[ -f "$mods_file" ]]; then
-        while IFS= read -r line; do
-            line="${line%%#*}"
-            line="$(echo "$line" | xargs)"
-            [[ -n "$line" ]] || continue
-            mod_ids+=("$line")
+        while IFS= read -r line || [[ -n "$line" ]]; do
+            line="${line%$'\r'}"
+
+            if [[ "$line" =~ \[\"workshop-([0-9]+)\"\][[:space:]]*=[[:space:]]*\{ ]]; then
+                add_mod_id "${BASH_REMATCH[1]}"
+            fi
+
+            if [[ $in_mods_table -eq 1 ]]; then
+                if [[ "$line" =~ ^[[:space:]]*}[[:space:]]*,?[[:space:]]*$ ]]; then
+                    in_mods_table=0
+                    continue
+                fi
+                stripped="${line%%#*}"
+                stripped="${stripped%%--*}"
+                if [[ "$stripped" =~ ^[[:space:]]*([0-9]+)[[:space:]]*$ ]]; then
+                    add_mod_id "${BASH_REMATCH[1]}"
+                fi
+                continue
+            fi
+
+            if [[ "$line" =~ ^[[:space:]]*Mods[[:space:]]*=[[:space:]]*\{[[:space:]]*$ ]]; then
+                in_mods_table=1
+                continue
+            fi
+
+            stripped="${line%%#*}"
+            stripped="${stripped%%--*}"
+            if [[ "$stripped" =~ ^[[:space:]]*([0-9]+)[[:space:]]*$ ]]; then
+                add_mod_id "${BASH_REMATCH[1]}"
+            fi
         done < "$mods_file"
     else
-        warn "env/mods.txt not found; writing empty mod configuration"
+        warn "env/mods.txt not found; preserving existing mod configuration"
+        return 0
     fi
 
     local -a mods_setup_targets=(
@@ -119,8 +157,6 @@ sync_mod_configs() {
         "${runtime_mods_dir}/dedicated_server_mods_setup.lua"
     )
     local target
-    local mod_id
-
     for target in "${mods_setup_targets[@]}"; do
         mkdir -p "$(dirname "$target")"
         {

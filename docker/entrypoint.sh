@@ -180,109 +180,16 @@ authentication_port = 8767
 EOF
 
 # World generation overrides for Master and Caves
-cat > "${MASTER_DIR}/worldgenoverride.lua" <<'EOF'
-return {
-override_enabled = true,
-preset = SURVIVAL_TOGETHER, -- "SURVIVAL_TOGETHER", "MOD_MISSING", "SURVIVAL_TOGETHER_CLASSIC", "SURVIVAL_DEFAULT_PLUS", "COMPLETE_DARKNESS", "DST_CAVE", "DST_CAVE_PLUS"
-overrides = {
--- MISC
-task_set = "default", -- "classic", "default", "cave_default"
-start_location = "default", -- "caves", "default", "plus", "darkness"
-branching = "default", -- "never", "least", "default", "most"
-loop = "default", -- "never", "default", "always"
-autumn = "default", -- "noseason", "veryshortseason", "shortseason", "default", "longseason", "verylongseason", "random"
-winter = "default", -- "noseason", "veryshortseason", "shortseason", "default", "longseason", "verylongseason", "random"
-spring = "default", -- "noseason", "veryshortseason", "shortseason", "default", "longseason", "verylongseason", "random"
-summer = "default", -- "noseason", "veryshortseason", "shortseason", "default", "longseason", "verylongseason", "random"
-season_start = "default", -- "default", "winter", "spring", "summer", "autumnorspring", "winterorsummer", "random"
-day = "default", -- "default", "longday", "longdusk", "longnight", "noday", "nodusk", "nonight", "onlyday", "onlydusk", "onlynight"
-weather = "default", -- "never", "rare", "default", "often", "always"
-earthquakes = "default", -- "never", "rare", "default", "often", "always"
-lightning = "default", -- "never", "rare", "default", "often", "always"
-frograin = "default", -- "never", "rare", "default", "often", "always"
-wildfires = "default", -- "never", "rare", "default", "often", "always"
-touchstone = "default", -- "never", "rare", "default", "often", "always"
-regrowth = "default", -- "veryslow", "slow", "default", "fast", "veryfast"
-cavelight = "default", -- "veryslow", "slow", "default", "fast", "veryfast"
-boons = "default", -- "never", "rare", "default", "often", "always"
-prefabswaps_start = "default", -- "classic", "default", "highly random"
-prefabswaps = "default", -- "default", "none", "few", "normal", "many", "max"
- 
--- RESOURCES
-flowers = "default", -- "never", "rare", "default", "often", "always"
-grass = "default", -- "never", "rare", "default", "often", "always"
-sapling = "default", -- "never", "rare", "default", "often", "always"
-marshbush = "default", -- "never", "rare", "default", "often", "always"
-tumbleweed = "default", -- "never", "rare", "default", "often", "always"
-reeds = "default", -- "never", "rare", "default", "often", "always"
-trees = "default", -- "never", "rare", "default", "often", "always"
-flint = "default", -- "never", "rare", "default", "often", "always"
-rock = "default", -- "never", "rare", "default", "often", "always"
-rock_ice = "default", -- "never", "rare", "default", "often", "always"
-meteorspawner = "default", -- "never", "rare", "default", "often", "always"
-meteorshowers = "default", -- "never", "rare", "default", "often", "always"
-mushtree = "default", -- "never", "rare", "default", "often", "always"
-fern = "default", -- "never", "rare", "default", "often", "always"
-flower_cave = "default", -- "never", "rare", "default", "often", "always"
-wormlights = "default", -- "never", "rare", "default", "often", "always"
- 
--- UNPREPARED
-berrybush = "default", -- "never", "rare", "default", "often", "always"
-carrot = "default", -- "never", "rare", "default", "often", "always"
-mushroom = "default", -- "never", "rare", "default", "often", "always"
-cactus = "default", -- "never", "rare", "default", "often", "always"
-banana = "default", -- "never", "rare", "default", "often", "always"
-lichen = "default", -- "never", "rare", "default", "often", "always"
- 
--- ANIMALS
-rabbits = "default", -- "never", "rare", "default", "often", "always"
-moles = "default", -- "never", "rare", "default", "often", "always"
-butterfly = "default", -- "never", "rare", "default", "often", "always"
-birds = "default", -- "never", "rare", "default", "often", "always"
-buzzard = "default", -- "never", "rare", "default", "often", "always"
-catcoon = "default", -- "never", "rare", "default", "often", "always"
-perd = "default", -- "never", "rare", "default", "often", "always"
-pigs = "default", -- "never", "rare", "default", "often", "always"
-lightninggoat = "default", -- "never", "rare", "default", "often", "always"
-beefalo = "default", -- "never", "rare", "default", "often", "always"
-beefaloheat = "default", -- "never", "rare", "default", "often", "always"
-hunt = "default", -- "never", "rare", "default", "often", "always"
-alternatehunt = "default", -- "never", "rare", "default", "often", "always"
-penguins = "default", -- "never", "rare", "default", "often", "always"
-cave_ponds = "default", -- "never", "rare", "default", "often", "always"
-ponds = "default", -- "never", "rare", "default", "often", "always"
-bees = "default", -- "never", "rare", "default", "often", "always"
-angrybees = "default", -- "never", "rare", "default", "often", "always"
-tallbirds = "default", -- "never", "rare", "default", "often", "always"
-slurper = "default", -- "never", "rare", "default", "often", "always"
-bunnymen = "default", -- "never", "rare", "default", "often", "always"
-slurtles = "default", -- "never", "rare", "default", "often", "always"
-rocky = "default", -- "never", "rare", "default", "often", "always"
-monkey = "default", -- "never", "rare", "default", "often", "always"
- 
--- MONSTERS
-spiders = "default", -- "never", "rare", "default", "often", "always"
-cave_spiders = "default", -- "never", "rare", "default", "often", "always"
-hounds = "default", -- "never", "rare", "default", "often", "always"
-houndmound = "default", -- "never", "rare", "default", "often", "always"
-merm = "default", -- "never", "rare", "default", "often", "always"
-tentacles = "default", -- "never", "rare", "default", "often", "always"
-chess = "default", -- "never", "rare", "default", "often", "always"
-lureplants = "default", -- "never", "rare", "default", "often", "always"
-walrus = "default", -- "never", "rare", "default", "often", "always"
-liefs = "default", -- "never", "rare", "default", "often", "always"
-deciduousmonster = "default", -- "never", "rare", "default", "often", "always"
-krampus = "default", -- "never", "rare", "default", "often", "always"
-bearger = "rare", -- "never", "rare", "default", "often", "always"
-deerclops = "rare", -- "never", "rare", "default", "often", "always"
-goosemoose = "rare", -- "never", "rare", "default", "often", "always"
-dragonfly = "rare", -- "never", "rare", "default", "often", "always"
-bats = "default", -- "never", "rare", "default", "often", "always"
-fissure = "default", -- "never", "rare", "default", "often", "always"
-worms = "default", -- "never", "rare", "default", "often", "always"
-},
-}
-EOF
+WORLDGEN_TEMPLATE="${DST_WORLDGEN_TEMPLATE:-/home/dst/docker/env/worldgenoverride.txt}"
+if [[ ! -f "${WORLDGEN_TEMPLATE}" && -f "docker/env/worldgenoverride.txt" ]]; then
+  WORLDGEN_TEMPLATE="docker/env/worldgenoverride.txt"
+fi
+if [[ ! -f "${WORLDGEN_TEMPLATE}" ]]; then
+  echo "ERROR: ${WORLDGEN_TEMPLATE} not found" >&2
+  exit 1
+fi
+WORLDGEN_SIZE="${DST_WORLD_SIZE:-medium}"
+sed "s/__DST_WORLD_SIZE__/${WORLDGEN_SIZE}/g" "${WORLDGEN_TEMPLATE}" > "${MASTER_DIR}/worldgenoverride.lua"
 cp "${MASTER_DIR}/worldgenoverride.lua" "${CAVES_DIR}/worldgenoverride.lua"
 awk '{ sub(/^preset = SURVIVAL_TOGETHER,/, "preset = DST_CAVE,"); print }' \
   "${CAVES_DIR}/worldgenoverride.lua" > "${CAVES_DIR}/worldgenoverride.lua.tmp"
@@ -292,6 +199,7 @@ mv "${CAVES_DIR}/worldgenoverride.lua.tmp" "${CAVES_DIR}/worldgenoverride.lua"
 MODS_FILE="/home/dst/docker/env/mods.txt"
 TMP_MOD_SETUP="$(mktemp)"
 TMP_MODOVERRIDES="$(mktemp)"
+ALLOW_EMPTY_MODS_SYNC="${DST_ALLOW_EMPTY_MODS_SYNC:-false}"
 
 if [[ -f "${MODS_FILE}" ]]; then
   awk -v setup_file="${TMP_MOD_SETUP}" -v overrides_file="${TMP_MODOVERRIDES}" '
@@ -424,14 +332,24 @@ if [[ -f "${MODS_FILE}" ]]; then
     }
   ' "${MODS_FILE}"
 
-  mv "${TMP_MOD_SETUP}" "${MODS_DIR}/dedicated_server_mods_setup.lua"
-  mv "${TMP_MODOVERRIDES}" "${MASTER_DIR}/modoverrides.lua"
-  cp "${MASTER_DIR}/modoverrides.lua" "${CAVES_DIR}/modoverrides.lua"
+  if grep -q 'ServerModSetup("' "${TMP_MOD_SETUP}" || [[ "${ALLOW_EMPTY_MODS_SYNC}" == "true" ]]; then
+    mv "${TMP_MOD_SETUP}" "${MODS_DIR}/dedicated_server_mods_setup.lua"
+    mv "${TMP_MODOVERRIDES}" "${MASTER_DIR}/modoverrides.lua"
+    cp "${MASTER_DIR}/modoverrides.lua" "${CAVES_DIR}/modoverrides.lua"
+  else
+    echo "WARNING: No valid mods found in ${MODS_FILE}; preserving existing mod configuration. Set DST_ALLOW_EMPTY_MODS_SYNC=true to force overwrite." >&2
+  fi
 else
-  echo "WARNING: ${MODS_FILE} not found, no mods will be installed" >&2
-  echo "-- auto generated" > "${MODS_DIR}/dedicated_server_mods_setup.lua"
-  echo "return {}" > "${MASTER_DIR}/modoverrides.lua"
-  echo "return {}" > "${CAVES_DIR}/modoverrides.lua"
+  echo "WARNING: ${MODS_FILE} not found; preserving existing mod configuration." >&2
+  if [[ ! -f "${MODS_DIR}/dedicated_server_mods_setup.lua" ]]; then
+    echo "-- auto generated" > "${MODS_DIR}/dedicated_server_mods_setup.lua"
+  fi
+  if [[ ! -f "${MASTER_DIR}/modoverrides.lua" ]]; then
+    echo "return {}" > "${MASTER_DIR}/modoverrides.lua"
+  fi
+  if [[ ! -f "${CAVES_DIR}/modoverrides.lua" ]]; then
+    echo "return {}" > "${CAVES_DIR}/modoverrides.lua"
+  fi
 fi
 
 rm -f "${TMP_MOD_SETUP}" "${TMP_MODOVERRIDES}"
