@@ -1,0 +1,40 @@
+# Popular DST Mods (one mod ID per line)
+# Get mod IDs from: https://steamcommunity.com/app/346110/workshop/
+
+Mods = {
+  2477889104 # Beefalo Status Bar
+  569043634  # Campfire Respawn
+  378160973  # Global Positions
+  374550642  # Increased Stack size
+  2189004162 # Insight (Show Me+)
+  2798599672 # Extra Equip Slots_3
+  1207269058 # Simple Health Bar DST
+}
+
+#Overwrite Configure Mods
+-- Cấu hình Mod Campfire Respawn
+Overwrite_Mods = {
+  ["workshop-569043634"] = {
+    configuration_options = {
+      -- Nhóm Resurrectors (Cái dùng để hồi sinh)
+      ["campfire"] = "Enabled",      -- Lửa trại (cỏ/gỗ)
+      ["firepit"] = "Enabled",       -- Lò lửa đá
+      ["coldfire"] = "Enabled",      -- Lửa lạnh (mùa hè)
+      ["coldfirepit"] = "Enabled",   -- Lò lửa lạnh
+      ["skeleton"] = "Enabled",      -- Bộ xương (người chơi hoặc xương thường)
+    },
+    enabled = true
+  },
+ -- Cấu hình Mod Insight (Tối ưu hiệu năng)
+  ["workshop-2189004162"] = {
+   configuration_options = {
+      -- 1 là "Slow" hoặc "Low", giúp giảm số lần gửi dữ liệu qua mạng
+      ["update_period"] = 1, 
+      
+      -- Tắt bớt các tính năng quét dữ liệu liên tục không cần thiết
+      ["display_hp_mode"] = 1,
+      ["show_inventory"] = false, -- Rất quan trọng để giảm tải network
+    },
+    enabled = true 
+  }, 
+}

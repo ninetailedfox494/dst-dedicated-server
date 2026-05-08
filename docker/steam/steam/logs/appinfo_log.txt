@@ -1,0 +1,692 @@
+
+
+[2026-04-30 15:21:04] Client version: 1777415795
+[2026-04-30 15:21:04] ThreadedReadFromDisk: loading appinfo cache from: /home/dst/.steam/steam/appcache/appinfo.vdf
+[2026-04-30 15:21:04] ThreadedReadFromDisk: failed to open file: /home/dst/.steam/steam/appcache/appinfo.vdf
+[2026-04-30 15:21:04] CAppInfoCacheReadFromDiskThread took 0 milliseconds to initialize
+[2026-04-30 15:21:08] RequestAppInfoUpdate: AppIDs 7
+[2026-04-30 15:21:08] Change number 0->35575959, apps: 0/0, packages: 0/0
+[2026-04-30 15:21:08] Requesting 1 apps, 1 packages (meta data, 1024 prev attempts, expected 0 KB)
+[2026-04-30 15:21:09] Downloaded 1 apps via HTTP, 15 KB (3 KB compressed)
+[2026-04-30 15:21:09] Requesting 0 apps, 1 packages (full data, 1024 prev attempts, expected 17 KB)
+[2026-04-30 15:21:09] UpdatesJob: finished OK, apps updated 1 (15 KB), packages updated 1 (17 KB)
+[2026-04-30 15:21:09] Requesting 736 apps, 0 packages (meta data, 1024 prev attempts, expected 34 KB)
+[2026-04-30 15:21:11] Requested 91 app access tokens, 24 received, 67 denied
+[2026-04-30 15:21:11] Updated SHAs with 24 new access tokens
+[2026-04-30 15:21:11] Downloaded 177 apps via HTTP, 2370 KB (564 KB compressed)
+[2026-04-30 15:21:11] Requesting 559 apps, 0 packages (full data, 1024 prev attempts, expected 2373 KB)
+[2026-04-30 15:21:14] UpdatesJob: finished OK, apps updated 736 (4771 KB), packages updated 0 (0 KB)
+[2026-04-30 15:21:14] UpdatesJob: apps still needs updates, run again
+[2026-04-30 15:21:14] Requesting 67 apps, 0 packages (meta data, 1024 prev attempts, expected 3 KB)
+[2026-04-30 15:21:14] RequestAppInfoUpdate: AppIDs 343050
+[2026-04-30 15:21:15] Requested 67 app access tokens, 0 received, 67 denied
+[2026-04-30 15:21:15] UpdatesJob: finished OK, apps updated 0 (0 KB), packages updated 0 (0 KB)
+[2026-04-30 15:21:15] UpdatesJob: apps still needs updates, run again
+[2026-04-30 15:21:15] ThreadedWriteToDisk: writing appinfo cache to: /home/dst/.steam/steam/appcache/appinfo.vdf
+[2026-04-30 15:21:15] App cache write succeeded /home/dst/.steam/steam/appcache/appinfo.vdf (737 apps, 2320 KB) in 41 ms
+
+
+[2026-04-30 15:21:17] Client version: 1777415795
+[2026-04-30 15:21:17] ThreadedReadFromDisk: loading appinfo cache from: /home/dst/.steam/steam/appcache/appinfo.vdf
+[2026-04-30 15:21:17] ThreadedReadFromDisk: header version: 0x7564429
+[2026-04-30 15:21:17] ThreadedReadFromDisk: apps updated: 737
+[2026-04-30 15:21:17] CAppInfoCacheReadFromDiskThread took 96 milliseconds to initialize
+[2026-04-30 15:21:18] RequestAppInfoUpdate: AppIDs 7
+[2026-04-30 15:21:18] Change number 35575959->35575962, apps: 0/3, packages: 0/0
+[2026-04-30 15:21:18] Requesting 68 apps, 0 packages (meta data, 1024 prev attempts, expected 3 KB)
+[2026-04-30 15:21:18] Requested 67 app access tokens, 0 received, 67 denied
+[2026-04-30 15:21:18] UpdatesJob: finished OK, apps updated 0 (0 KB), packages updated 0 (0 KB)
+[2026-04-30 15:21:19] RequestAppInfoUpdate: AppIDs 343050
+[2026-04-30 15:21:19] Requesting 1 apps, 0 packages (meta data, 1024 prev attempts, expected 0 KB)
+[2026-04-30 15:21:19] Requesting 1 apps, 0 packages (full data, 1024 prev attempts, expected 5 KB)
+[2026-04-30 15:21:19] UpdatesJob: finished OK, apps updated 1 (5 KB), packages updated 0 (0 KB)
+[2026-04-30 15:21:19] Requesting 1 apps, 0 packages (meta data, 1024 prev attempts, expected 0 KB)
+[2026-04-30 15:21:20] Downloaded 1 apps via HTTP, 8 KB (2 KB compressed)
+[2026-04-30 15:21:20] UpdatesJob: finished OK, apps updated 1 (8 KB), packages updated 0 (0 KB)
+[2026-04-30 15:21:25] ThreadedWriteToDisk: writing appinfo cache to: /home/dst/.steam/steam/appcache/appinfo.vdf
+[2026-04-30 15:21:25] App cache write succeeded /home/dst/.steam/steam/appcache/appinfo.vdf (739 apps, 2328 KB) in 38 ms
+
+
+[2026-04-30 15:26:40] Client version: no bootstrapper found
+[2026-04-30 15:26:40] ThreadedReadFromDisk: loading appinfo cache from: /home/dst/.steam/steam/appcache/appinfo.vdf
+[2026-04-30 15:26:40] ThreadedReadFromDisk: header version: 0x7564429
+[2026-04-30 15:26:40] ThreadedReadFromDisk: apps updated: 1
+[2026-04-30 15:26:40] CAppInfoCacheReadFromDiskThread took 33 milliseconds to initialize
+
+
+[2026-04-30 15:26:41] Client version: no bootstrapper found
+[2026-04-30 15:26:41] ThreadedReadFromDisk: loading appinfo cache from: /home/dst/.steam/steam/appcache/appinfo.vdf
+[2026-04-30 15:26:41] ThreadedReadFromDisk: header version: 0x7564429
+[2026-04-30 15:26:41] ThreadedReadFromDisk: apps updated: 1
+[2026-04-30 15:26:41] CAppInfoCacheReadFromDiskThread took 19 milliseconds to initialize
+
+
+[2026-04-30 15:34:02] Client version: 1777415795
+[2026-04-30 15:34:02] ThreadedReadFromDisk: loading appinfo cache from: /home/dst/.steam/steam/appcache/appinfo.vdf
+[2026-04-30 15:34:02] ThreadedReadFromDisk: header version: 0x7564429
+[2026-04-30 15:34:02] ThreadedReadFromDisk: apps updated: 739
+[2026-04-30 15:34:02] CAppInfoCacheReadFromDiskThread took 98 milliseconds to initialize
+[2026-04-30 15:34:03] RequestAppInfoUpdate: AppIDs 7
+[2026-04-30 15:34:03] Packages changed: force all
+[2026-04-30 15:34:03] Change number 35575962->35576292, apps: 0/240, packages: 0/0
+[2026-04-30 15:34:03] Requesting 68 apps, 1 packages (meta data, 1024 prev attempts, expected 3 KB)
+[2026-04-30 15:34:04] Requested 67 app access tokens, 0 received, 67 denied
+[2026-04-30 15:34:04] UpdatesJob: finished OK, apps updated 0 (0 KB), packages updated 0 (0 KB)
+[2026-04-30 15:34:04] RequestAppInfoUpdate: AppIDs 343050
+[2026-04-30 15:34:04] Requesting 1 apps, 0 packages (meta data, 1024 prev attempts, expected 0 KB)
+[2026-04-30 15:34:04] UpdatesJob: finished OK, apps updated 0 (0 KB), packages updated 0 (0 KB)
+
+
+[2026-04-30 15:38:55] Client version: no bootstrapper found
+[2026-04-30 15:38:55] ThreadedReadFromDisk: loading appinfo cache from: /home/dst/.steam/steam/appcache/appinfo.vdf
+[2026-04-30 15:38:55] ThreadedReadFromDisk: header version: 0x7564429
+[2026-04-30 15:38:55] ThreadedReadFromDisk: apps updated: 1
+[2026-04-30 15:38:55] CAppInfoCacheReadFromDiskThread took 20 milliseconds to initialize
+
+
+[2026-04-30 15:38:55] Client version: no bootstrapper found
+[2026-04-30 15:38:55] ThreadedReadFromDisk: loading appinfo cache from: /home/dst/.steam/steam/appcache/appinfo.vdf
+[2026-04-30 15:38:55] ThreadedReadFromDisk: header version: 0x7564429
+[2026-04-30 15:38:55] ThreadedReadFromDisk: apps updated: 1
+[2026-04-30 15:38:55] CAppInfoCacheReadFromDiskThread took 49 milliseconds to initialize
+
+
+[2026-04-30 15:54:25] Client version: 1777415795
+[2026-04-30 15:54:25] ThreadedReadFromDisk: loading appinfo cache from: /home/dst/.steam/steam/appcache/appinfo.vdf
+[2026-04-30 15:54:25] ThreadedReadFromDisk: header version: 0x7564429
+[2026-04-30 15:54:26] ThreadedReadFromDisk: apps updated: 739
+[2026-04-30 15:54:26] CAppInfoCacheReadFromDiskThread took 103 milliseconds to initialize
+[2026-04-30 15:54:27] RequestAppInfoUpdate: AppIDs 7
+[2026-04-30 15:54:27] Packages changed: force all
+[2026-04-30 15:54:27] Apps changed: 304930=35576695,1611600=35576655,394690=35576607,258550=35576518,
+[2026-04-30 15:54:27] Change number 35576292->35576747, apps: 4/330, packages: 0/0
+[2026-04-30 15:54:27] Requesting 72 apps, 1 packages (meta data, 1024 prev attempts, expected 3 KB)
+[2026-04-30 15:54:27] Requested 67 app access tokens, 0 received, 67 denied
+[2026-04-30 15:54:28] Downloaded 1 apps via HTTP, 18 KB (4 KB compressed)
+[2026-04-30 15:54:28] Requesting 1 apps, 0 packages (full data, 1024 prev attempts, expected 4 KB)
+[2026-04-30 15:54:28] UpdatesJob: finished OK, apps updated 2 (22 KB), packages updated 0 (0 KB)
+[2026-04-30 15:54:28] RequestAppInfoUpdate: AppIDs 343050
+[2026-04-30 15:54:28] Requesting 1 apps, 0 packages (meta data, 1024 prev attempts, expected 0 KB)
+[2026-04-30 15:54:28] UpdatesJob: finished OK, apps updated 0 (0 KB), packages updated 0 (0 KB)
+[2026-04-30 15:54:33] ThreadedWriteToDisk: writing appinfo cache to: /home/dst/.steam/steam/appcache/appinfo.vdf
+[2026-04-30 15:54:33] App cache write succeeded /home/dst/.steam/steam/appcache/appinfo.vdf (739 apps, 2328 KB) in 70 ms
+
+
+[2026-04-30 15:59:17] Client version: no bootstrapper found
+[2026-04-30 15:59:17] ThreadedReadFromDisk: loading appinfo cache from: /home/dst/.steam/steam/appcache/appinfo.vdf
+[2026-04-30 15:59:17] ThreadedReadFromDisk: header version: 0x7564429
+[2026-04-30 15:59:17] ThreadedReadFromDisk: apps updated: 1
+[2026-04-30 15:59:17] CAppInfoCacheReadFromDiskThread took 18 milliseconds to initialize
+
+
+[2026-04-30 15:59:19] Client version: no bootstrapper found
+[2026-04-30 15:59:19] ThreadedReadFromDisk: loading appinfo cache from: /home/dst/.steam/steam/appcache/appinfo.vdf
+[2026-04-30 15:59:19] ThreadedReadFromDisk: header version: 0x7564429
+[2026-04-30 15:59:19] ThreadedReadFromDisk: apps updated: 1
+[2026-04-30 15:59:19] CAppInfoCacheReadFromDiskThread took 26 milliseconds to initialize
+
+
+[2026-04-30 16:17:52] Client version: 1777415795
+[2026-04-30 16:17:52] ThreadedReadFromDisk: loading appinfo cache from: /home/dst/.steam/steam/appcache/appinfo.vdf
+[2026-04-30 16:17:52] ThreadedReadFromDisk: header version: 0x7564429
+[2026-04-30 16:17:52] ThreadedReadFromDisk: apps updated: 739
+[2026-04-30 16:17:52] CAppInfoCacheReadFromDiskThread took 95 milliseconds to initialize
+[2026-04-30 16:17:53] RequestAppInfoUpdate: AppIDs 7
+[2026-04-30 16:17:53] Packages changed: force all
+[2026-04-30 16:17:53] Apps changed: 603850=35577080,304930=35576961,108600=35576829,
+[2026-04-30 16:17:53] Change number 35576747->35577264, apps: 3/352, packages: 0/0
+[2026-04-30 16:17:53] Requesting 71 apps, 1 packages (meta data, 1024 prev attempts, expected 3 KB)
+[2026-04-30 16:17:54] Requested 67 app access tokens, 0 received, 67 denied
+[2026-04-30 16:17:54] Downloaded 2 apps via HTTP, 27 KB (7 KB compressed)
+[2026-04-30 16:17:54] UpdatesJob: finished OK, apps updated 2 (27 KB), packages updated 0 (0 KB)
+[2026-04-30 16:17:54] RequestAppInfoUpdate: AppIDs 343050
+[2026-04-30 16:17:54] Requesting 1 apps, 0 packages (meta data, 1024 prev attempts, expected 0 KB)
+[2026-04-30 16:17:54] UpdatesJob: finished OK, apps updated 0 (0 KB), packages updated 0 (0 KB)
+[2026-04-30 16:17:59] ThreadedWriteToDisk: writing appinfo cache to: /home/dst/.steam/steam/appcache/appinfo.vdf
+[2026-04-30 16:18:00] App cache write succeeded /home/dst/.steam/steam/appcache/appinfo.vdf (739 apps, 2328 KB) in 51 ms
+
+
+[2026-04-30 16:23:22] Client version: no bootstrapper found
+[2026-04-30 16:23:22] ThreadedReadFromDisk: loading appinfo cache from: /home/dst/.steam/steam/appcache/appinfo.vdf
+[2026-04-30 16:23:22] ThreadedReadFromDisk: header version: 0x7564429
+[2026-04-30 16:23:22] ThreadedReadFromDisk: apps updated: 1
+[2026-04-30 16:23:22] CAppInfoCacheReadFromDiskThread took 18 milliseconds to initialize
+
+
+[2026-04-30 16:23:23] Client version: no bootstrapper found
+[2026-04-30 16:23:23] ThreadedReadFromDisk: loading appinfo cache from: /home/dst/.steam/steam/appcache/appinfo.vdf
+[2026-04-30 16:23:23] ThreadedReadFromDisk: header version: 0x7564429
+[2026-04-30 16:23:23] ThreadedReadFromDisk: apps updated: 1
+[2026-04-30 16:23:23] CAppInfoCacheReadFromDiskThread took 18 milliseconds to initialize
+
+
+[2026-04-30 17:13:57] Client version: 1777415795
+[2026-04-30 17:13:57] ThreadedReadFromDisk: loading appinfo cache from: /home/dst/.steam/steam/appcache/appinfo.vdf
+[2026-04-30 17:13:57] ThreadedReadFromDisk: header version: 0x7564429
+[2026-04-30 17:13:57] ThreadedReadFromDisk: apps updated: 739
+[2026-04-30 17:13:57] CAppInfoCacheReadFromDiskThread took 105 milliseconds to initialize
+[2026-04-30 17:13:58] RequestAppInfoUpdate: AppIDs 7
+[2026-04-30 17:13:59] Packages changed: force all
+[2026-04-30 17:13:59] Apps changed: 544550=35578942,2089300=35578853,281990=35578520,1669000=35578276,494840=35578127,108600=35578055,7=35577729,4000=35577702,1511630=35577343,329130=35577275,
+[2026-04-30 17:13:59] Change number 35577264->35578987, apps: 10/904, packages: 0/0
+[2026-04-30 17:13:59] Requesting 77 apps, 1 packages (meta data, 1024 prev attempts, expected 3 KB)
+[2026-04-30 17:13:59] Requested 67 app access tokens, 0 received, 67 denied
+[2026-04-30 17:13:59] Downloaded 4 apps via HTTP, 196 KB (25 KB compressed)
+[2026-04-30 17:13:59] Requesting 2 apps, 0 packages (full data, 1024 prev attempts, expected 14 KB)
+[2026-04-30 17:14:00] UpdatesJob: finished OK, apps updated 6 (211 KB), packages updated 0 (0 KB)
+[2026-04-30 17:14:00] RequestAppInfoUpdate: AppIDs 343050
+[2026-04-30 17:14:00] Requesting 1 apps, 0 packages (meta data, 1024 prev attempts, expected 0 KB)
+[2026-04-30 17:14:00] UpdatesJob: finished OK, apps updated 0 (0 KB), packages updated 0 (0 KB)
+[2026-04-30 17:14:05] ThreadedWriteToDisk: writing appinfo cache to: /home/dst/.steam/steam/appcache/appinfo.vdf
+[2026-04-30 17:14:05] App cache write succeeded /home/dst/.steam/steam/appcache/appinfo.vdf (739 apps, 2328 KB) in 85 ms
+
+
+[2026-04-30 17:19:55] Client version: no bootstrapper found
+[2026-04-30 17:19:55] ThreadedReadFromDisk: loading appinfo cache from: /home/dst/.steam/steam/appcache/appinfo.vdf
+[2026-04-30 17:19:55] ThreadedReadFromDisk: header version: 0x7564429
+[2026-04-30 17:19:55] ThreadedReadFromDisk: apps updated: 1
+[2026-04-30 17:19:55] CAppInfoCacheReadFromDiskThread took 30 milliseconds to initialize
+
+
+[2026-04-30 17:19:55] Client version: no bootstrapper found
+[2026-04-30 17:19:55] ThreadedReadFromDisk: loading appinfo cache from: /home/dst/.steam/steam/appcache/appinfo.vdf
+[2026-04-30 17:19:55] ThreadedReadFromDisk: header version: 0x7564429
+[2026-04-30 17:19:55] ThreadedReadFromDisk: apps updated: 1
+[2026-04-30 17:19:55] CAppInfoCacheReadFromDiskThread took 23 milliseconds to initialize
+
+
+[2026-04-30 18:02:17] Client version: 1777415795
+[2026-04-30 18:02:17] ThreadedReadFromDisk: loading appinfo cache from: /home/dst/.steam/steam/appcache/appinfo.vdf
+[2026-04-30 18:02:17] ThreadedReadFromDisk: header version: 0x7564429
+[2026-04-30 18:02:18] ThreadedReadFromDisk: apps updated: 739
+[2026-04-30 18:02:18] CAppInfoCacheReadFromDiskThread took 97 milliseconds to initialize
+[2026-04-30 18:02:18] RequestAppInfoUpdate: AppIDs 7
+[2026-04-30 18:02:19] Packages changed: force all
+[2026-04-30 18:02:19] Apps changed: 393380=35579943,589290=35579924,2635410=35579920,258550=35579834,730=35579602,
+[2026-04-30 18:02:19] Change number 35578987->35579971, apps: 5/669, packages: 0/0
+[2026-04-30 18:02:19] Requesting 73 apps, 1 packages (meta data, 1024 prev attempts, expected 3 KB)
+[2026-04-30 18:02:19] Requested 67 app access tokens, 0 received, 67 denied
+[2026-04-30 18:02:19] Requesting 2 apps, 0 packages (full data, 1024 prev attempts, expected 12 KB)
+[2026-04-30 18:02:20] UpdatesJob: finished OK, apps updated 2 (12 KB), packages updated 0 (0 KB)
+[2026-04-30 18:02:20] RequestAppInfoUpdate: AppIDs 343050
+[2026-04-30 18:02:20] Requesting 1 apps, 0 packages (meta data, 1024 prev attempts, expected 0 KB)
+[2026-04-30 18:02:20] UpdatesJob: finished OK, apps updated 0 (0 KB), packages updated 0 (0 KB)
+[2026-04-30 18:02:25] ThreadedWriteToDisk: writing appinfo cache to: /home/dst/.steam/steam/appcache/appinfo.vdf
+[2026-04-30 18:02:25] App cache write succeeded /home/dst/.steam/steam/appcache/appinfo.vdf (739 apps, 2328 KB) in 63 ms
+
+
+[2026-04-30 18:10:13] Client version: 1777415795
+[2026-04-30 18:10:13] ThreadedReadFromDisk: loading appinfo cache from: /home/dst/.steam/steam/appcache/appinfo.vdf
+[2026-04-30 18:10:13] ThreadedReadFromDisk: header version: 0x7564429
+[2026-04-30 18:10:13] ThreadedReadFromDisk: apps updated: 739
+[2026-04-30 18:10:13] CAppInfoCacheReadFromDiskThread took 102 milliseconds to initialize
+[2026-04-30 18:10:14] RequestAppInfoUpdate: AppIDs 7
+[2026-04-30 18:10:15] Packages changed: force all
+[2026-04-30 18:10:15] Apps changed: 1307180=35580109,329130=35579981,
+[2026-04-30 18:10:15] Change number 35579971->35580129, apps: 2/131, packages: 0/0
+[2026-04-30 18:10:15] Requesting 70 apps, 1 packages (meta data, 1024 prev attempts, expected 3 KB)
+[2026-04-30 18:10:15] Requested 67 app access tokens, 0 received, 67 denied
+[2026-04-30 18:10:15] Requesting 2 apps, 0 packages (full data, 1024 prev attempts, expected 11 KB)
+[2026-04-30 18:10:16] UpdatesJob: finished OK, apps updated 2 (11 KB), packages updated 0 (0 KB)
+[2026-04-30 18:10:16] RequestAppInfoUpdate: AppIDs 343050
+[2026-04-30 18:10:16] Requesting 1 apps, 0 packages (meta data, 1024 prev attempts, expected 0 KB)
+[2026-04-30 18:10:16] UpdatesJob: finished OK, apps updated 0 (0 KB), packages updated 0 (0 KB)
+[2026-04-30 18:10:30] ThreadedWriteToDisk: writing appinfo cache to: /home/dst/.steam/steam/appcache/appinfo.vdf
+[2026-04-30 18:10:30] App cache write succeeded /home/dst/.steam/steam/appcache/appinfo.vdf (739 apps, 2328 KB) in 39 ms
+
+
+[2026-04-30 18:10:34] Client version: 1777415795
+[2026-04-30 18:10:34] ThreadedReadFromDisk: loading appinfo cache from: /home/dst/.steam/steam/appcache/appinfo.vdf
+[2026-04-30 18:10:34] ThreadedReadFromDisk: header version: 0x7564429
+[2026-04-30 18:10:34] ThreadedReadFromDisk: apps updated: 739
+[2026-04-30 18:10:34] CAppInfoCacheReadFromDiskThread took 98 milliseconds to initialize
+[2026-04-30 18:10:35] RequestAppInfoUpdate: AppIDs 7
+[2026-04-30 18:10:36] Change number 35580129->35580134, apps: 0/3, packages: 0/1
+[2026-04-30 18:10:36] Requesting 68 apps, 0 packages (meta data, 1024 prev attempts, expected 3 KB)
+
+
+[2026-04-30 18:17:27] Client version: 1777415795
+[2026-04-30 18:17:27] ThreadedReadFromDisk: loading appinfo cache from: /home/dst/.steam/steam/appcache/appinfo.vdf
+[2026-04-30 18:17:27] ThreadedReadFromDisk: header version: 0x7564429
+[2026-04-30 18:17:27] ThreadedReadFromDisk: apps updated: 739
+[2026-04-30 18:17:27] CAppInfoCacheReadFromDiskThread took 98 milliseconds to initialize
+[2026-04-30 18:17:28] RequestAppInfoUpdate: AppIDs 7
+[2026-04-30 18:17:28] Packages changed: force all
+[2026-04-30 18:17:28] Apps changed: 1511630=35580170,
+[2026-04-30 18:17:28] Change number 35580129->35580268, apps: 1/102, packages: 0/0
+[2026-04-30 18:17:28] Requesting 69 apps, 1 packages (meta data, 1024 prev attempts, expected 3 KB)
+[2026-04-30 18:17:29] Requested 67 app access tokens, 0 received, 67 denied
+[2026-04-30 18:17:29] UpdatesJob: finished OK, apps updated 0 (0 KB), packages updated 0 (0 KB)
+[2026-04-30 18:17:29] RequestAppInfoUpdate: AppIDs 343050
+[2026-04-30 18:17:29] Requesting 1 apps, 0 packages (meta data, 1024 prev attempts, expected 0 KB)
+[2026-04-30 18:17:29] UpdatesJob: finished OK, apps updated 0 (0 KB), packages updated 0 (0 KB)
+
+
+[2026-04-30 18:33:14] Client version: 1777415795
+[2026-04-30 18:33:14] ThreadedReadFromDisk: loading appinfo cache from: /home/dst/.steam/steam/appcache/appinfo.vdf
+[2026-04-30 18:33:14] ThreadedReadFromDisk: header version: 0x7564429
+[2026-04-30 18:33:14] ThreadedReadFromDisk: apps updated: 739
+[2026-04-30 18:33:14] CAppInfoCacheReadFromDiskThread took 97 milliseconds to initialize
+[2026-04-30 18:33:15] RequestAppInfoUpdate: AppIDs 7
+[2026-04-30 18:33:15] Packages changed: force all
+[2026-04-30 18:33:15] Change number 35580268->35580565, apps: 0/285, packages: 0/0
+[2026-04-30 18:33:15] Requesting 68 apps, 1 packages (meta data, 1024 prev attempts, expected 3 KB)
+[2026-04-30 18:33:16] Requested 67 app access tokens, 0 received, 67 denied
+[2026-04-30 18:33:16] UpdatesJob: finished OK, apps updated 0 (0 KB), packages updated 0 (0 KB)
+[2026-04-30 18:33:16] RequestAppInfoUpdate: AppIDs 343050
+[2026-04-30 18:33:16] Requesting 1 apps, 0 packages (meta data, 1024 prev attempts, expected 0 KB)
+[2026-04-30 18:33:16] UpdatesJob: finished OK, apps updated 0 (0 KB), packages updated 0 (0 KB)
+
+
+[2026-04-30 18:39:14] Client version: no bootstrapper found
+[2026-04-30 18:39:14] ThreadedReadFromDisk: loading appinfo cache from: /home/dst/.steam/steam/appcache/appinfo.vdf
+[2026-04-30 18:39:14] ThreadedReadFromDisk: header version: 0x7564429
+[2026-04-30 18:39:14] ThreadedReadFromDisk: apps updated: 1
+[2026-04-30 18:39:14] CAppInfoCacheReadFromDiskThread took 47 milliseconds to initialize
+
+
+[2026-04-30 18:39:14] Client version: no bootstrapper found
+[2026-04-30 18:39:14] ThreadedReadFromDisk: loading appinfo cache from: /home/dst/.steam/steam/appcache/appinfo.vdf
+[2026-04-30 18:39:14] ThreadedReadFromDisk: header version: 0x7564429
+[2026-04-30 18:39:14] ThreadedReadFromDisk: apps updated: 1
+[2026-04-30 18:39:14] CAppInfoCacheReadFromDiskThread took 99 milliseconds to initialize
+
+
+[2026-05-01 03:02:49] Client version: no bootstrapper found
+[2026-05-01 03:02:49] ThreadedReadFromDisk: loading appinfo cache from: /home/dst/.steam/steam/appcache/appinfo.vdf
+[2026-05-01 03:02:49] ThreadedReadFromDisk: header version: 0x7564429
+[2026-05-01 03:02:49] ThreadedReadFromDisk: apps updated: 1
+[2026-05-01 03:02:49] CAppInfoCacheReadFromDiskThread took 25 milliseconds to initialize
+
+
+[2026-05-01 03:02:50] Client version: no bootstrapper found
+[2026-05-01 03:02:50] ThreadedReadFromDisk: loading appinfo cache from: /home/dst/.steam/steam/appcache/appinfo.vdf
+[2026-05-01 03:02:50] ThreadedReadFromDisk: header version: 0x7564429
+[2026-05-01 03:02:50] ThreadedReadFromDisk: apps updated: 1
+[2026-05-01 03:02:50] CAppInfoCacheReadFromDiskThread took 28 milliseconds to initialize
+
+
+[2026-05-01 03:19:42] Client version: no bootstrapper found
+[2026-05-01 03:19:42] ThreadedReadFromDisk: loading appinfo cache from: /home/dst/.steam/steam/appcache/appinfo.vdf
+[2026-05-01 03:19:42] ThreadedReadFromDisk: header version: 0x7564429
+[2026-05-01 03:19:42] ThreadedReadFromDisk: apps updated: 1
+[2026-05-01 03:19:42] CAppInfoCacheReadFromDiskThread took 16 milliseconds to initialize
+
+
+[2026-05-01 03:19:42] Client version: no bootstrapper found
+[2026-05-01 03:19:42] ThreadedReadFromDisk: loading appinfo cache from: /home/dst/.steam/steam/appcache/appinfo.vdf
+[2026-05-01 03:19:42] ThreadedReadFromDisk: header version: 0x7564429
+[2026-05-01 03:19:42] ThreadedReadFromDisk: apps updated: 1
+[2026-05-01 03:19:42] CAppInfoCacheReadFromDiskThread took 36 milliseconds to initialize
+
+
+[2026-05-01 03:21:03] Client version: 1777415795
+[2026-05-01 03:21:03] ThreadedReadFromDisk: loading appinfo cache from: /home/dst/.steam/steam/appcache/appinfo.vdf
+[2026-05-01 03:21:03] ThreadedReadFromDisk: header version: 0x7564429
+[2026-05-01 03:21:03] ThreadedReadFromDisk: apps updated: 739
+[2026-05-01 03:21:03] CAppInfoCacheReadFromDiskThread took 89 milliseconds to initialize
+[2026-05-01 03:21:04] RequestAppInfoUpdate: AppIDs 7
+[2026-05-01 03:21:04] Packages changed: force all
+[2026-05-01 03:21:04] Apps changed: force all
+[2026-05-01 03:21:04] Change number 35580565->35588912, apps: 0/0, packages: 0/0
+[2026-05-01 03:21:04] Requesting 739 apps, 1 packages (meta data, 1024 prev attempts, expected 34 KB)
+[2026-05-01 03:21:05] Requested 67 app access tokens, 0 received, 67 denied
+[2026-05-01 03:21:05] Downloaded 10 apps via HTTP, 142 KB (36 KB compressed)
+[2026-05-01 03:21:05] Requesting 9 apps, 0 packages (full data, 1024 prev attempts, expected 55 KB)
+[2026-05-01 03:21:05] UpdatesJob: finished OK, apps updated 19 (197 KB), packages updated 0 (0 KB)
+[2026-05-01 03:21:05] RequestAppInfoUpdate: AppIDs 343050
+[2026-05-01 03:21:05] Requesting 1 apps, 0 packages (meta data, 1024 prev attempts, expected 0 KB)
+[2026-05-01 03:21:06] UpdatesJob: finished OK, apps updated 0 (0 KB), packages updated 0 (0 KB)
+[2026-05-01 03:21:10] ThreadedWriteToDisk: writing appinfo cache to: /home/dst/.steam/steam/appcache/appinfo.vdf
+[2026-05-01 03:21:10] App cache write succeeded /home/dst/.steam/steam/appcache/appinfo.vdf (739 apps, 2329 KB) in 36 ms
+
+
+[2026-05-01 03:21:12] Client version: 1777415795
+[2026-05-01 03:21:12] ThreadedReadFromDisk: loading appinfo cache from: /home/dst/.steam/steam/appcache/appinfo.vdf
+[2026-05-01 03:21:12] ThreadedReadFromDisk: header version: 0x7564429
+[2026-05-01 03:21:12] ThreadedReadFromDisk: apps updated: 739
+[2026-05-01 03:21:12] CAppInfoCacheReadFromDiskThread took 86 milliseconds to initialize
+[2026-05-01 03:21:13] RequestAppInfoUpdate: AppIDs 7
+[2026-05-01 03:21:13] Change number 35588912->35588915, apps: 0/2, packages: 0/0
+[2026-05-01 03:21:13] Requesting 68 apps, 0 packages (meta data, 1024 prev attempts, expected 3 KB)
+[2026-05-01 03:21:14] Requested 67 app access tokens, 0 received, 67 denied
+[2026-05-01 03:21:14] UpdatesJob: finished OK, apps updated 0 (0 KB), packages updated 0 (0 KB)
+[2026-05-01 03:21:14] RequestAppInfoUpdate: AppIDs 343050
+[2026-05-01 03:21:14] Requesting 1 apps, 0 packages (meta data, 1024 prev attempts, expected 0 KB)
+[2026-05-01 03:21:14] UpdatesJob: finished OK, apps updated 0 (0 KB), packages updated 0 (0 KB)
+
+
+[2026-05-01 03:26:18] Client version: no bootstrapper found
+[2026-05-01 03:26:18] ThreadedReadFromDisk: loading appinfo cache from: /home/dst/.steam/steam/appcache/appinfo.vdf
+[2026-05-01 03:26:18] ThreadedReadFromDisk: header version: 0x7564429
+[2026-05-01 03:26:18] ThreadedReadFromDisk: apps updated: 1
+[2026-05-01 03:26:18] CAppInfoCacheReadFromDiskThread took 16 milliseconds to initialize
+
+
+[2026-05-01 03:26:18] Client version: no bootstrapper found
+[2026-05-01 03:26:18] ThreadedReadFromDisk: loading appinfo cache from: /home/dst/.steam/steam/appcache/appinfo.vdf
+[2026-05-01 03:26:18] ThreadedReadFromDisk: header version: 0x7564429
+[2026-05-01 03:26:18] ThreadedReadFromDisk: apps updated: 1
+[2026-05-01 03:26:18] CAppInfoCacheReadFromDiskThread took 30 milliseconds to initialize
+
+
+[2026-05-01 09:23:36] Client version: no bootstrapper found
+[2026-05-01 09:23:36] ThreadedReadFromDisk: loading appinfo cache from: /home/dst/.steam/steam/appcache/appinfo.vdf
+[2026-05-01 09:23:36] ThreadedReadFromDisk: header version: 0x7564429
+[2026-05-01 09:23:36] ThreadedReadFromDisk: apps updated: 1
+[2026-05-01 09:23:36] CAppInfoCacheReadFromDiskThread took 27 milliseconds to initialize
+
+
+[2026-05-01 09:23:37] Client version: no bootstrapper found
+[2026-05-01 09:23:37] ThreadedReadFromDisk: loading appinfo cache from: /home/dst/.steam/steam/appcache/appinfo.vdf
+[2026-05-01 09:23:37] ThreadedReadFromDisk: header version: 0x7564429
+[2026-05-01 09:23:37] ThreadedReadFromDisk: apps updated: 1
+[2026-05-01 09:23:37] CAppInfoCacheReadFromDiskThread took 21 milliseconds to initialize
+
+
+[2026-05-02 05:45:57] Client version: no bootstrapper found
+[2026-05-02 05:45:57] ThreadedReadFromDisk: loading appinfo cache from: /home/dst/.steam/steam/appcache/appinfo.vdf
+[2026-05-02 05:45:57] ThreadedReadFromDisk: header version: 0x7564429
+[2026-05-02 05:45:57] ThreadedReadFromDisk: apps updated: 1
+[2026-05-02 05:45:57] CAppInfoCacheReadFromDiskThread took 25 milliseconds to initialize
+
+
+[2026-05-02 05:45:58] Client version: no bootstrapper found
+[2026-05-02 05:45:58] ThreadedReadFromDisk: loading appinfo cache from: /home/dst/.steam/steam/appcache/appinfo.vdf
+[2026-05-02 05:45:58] ThreadedReadFromDisk: header version: 0x7564429
+[2026-05-02 05:45:58] ThreadedReadFromDisk: apps updated: 1
+[2026-05-02 05:45:58] CAppInfoCacheReadFromDiskThread took 23 milliseconds to initialize
+
+
+[2026-05-02 09:50:36] Client version: no bootstrapper found
+[2026-05-02 09:50:36] ThreadedReadFromDisk: loading appinfo cache from: /home/dst/.steam/steam/appcache/appinfo.vdf
+[2026-05-02 09:50:36] ThreadedReadFromDisk: header version: 0x7564429
+[2026-05-02 09:50:36] ThreadedReadFromDisk: apps updated: 1
+[2026-05-02 09:50:36] CAppInfoCacheReadFromDiskThread took 29 milliseconds to initialize
+
+
+[2026-05-02 09:50:36] Client version: no bootstrapper found
+[2026-05-02 09:50:36] ThreadedReadFromDisk: loading appinfo cache from: /home/dst/.steam/steam/appcache/appinfo.vdf
+[2026-05-02 09:50:36] ThreadedReadFromDisk: header version: 0x7564429
+[2026-05-02 09:50:36] ThreadedReadFromDisk: apps updated: 1
+[2026-05-02 09:50:36] CAppInfoCacheReadFromDiskThread took 25 milliseconds to initialize
+
+
+[2026-05-02 10:20:54] Client version: no bootstrapper found
+[2026-05-02 10:20:54] ThreadedReadFromDisk: loading appinfo cache from: /home/dst/.steam/steam/appcache/appinfo.vdf
+[2026-05-02 10:20:54] ThreadedReadFromDisk: header version: 0x7564429
+
+
+[2026-05-02 10:20:54] Client version: no bootstrapper found
+[2026-05-02 10:20:54] ThreadedReadFromDisk: loading appinfo cache from: /home/dst/.steam/steam/appcache/appinfo.vdf
+[2026-05-02 10:20:54] ThreadedReadFromDisk: apps updated: 1
+[2026-05-02 10:20:54] CAppInfoCacheReadFromDiskThread took 64 milliseconds to initialize
+[2026-05-02 10:20:54] ThreadedReadFromDisk: header version: 0x7564429
+[2026-05-02 10:20:54] ThreadedReadFromDisk: apps updated: 1
+[2026-05-02 10:20:54] CAppInfoCacheReadFromDiskThread took 59 milliseconds to initialize
+
+
+[2026-05-02 12:18:35] Client version: no bootstrapper found
+[2026-05-02 12:18:35] ThreadedReadFromDisk: loading appinfo cache from: /home/dst/.steam/steam/appcache/appinfo.vdf
+[2026-05-02 12:18:35] ThreadedReadFromDisk: header version: 0x7564429
+[2026-05-02 12:18:35] ThreadedReadFromDisk: apps updated: 1
+[2026-05-02 12:18:35] CAppInfoCacheReadFromDiskThread took 39 milliseconds to initialize
+
+
+[2026-05-02 12:18:35] Client version: no bootstrapper found
+[2026-05-02 12:18:35] ThreadedReadFromDisk: loading appinfo cache from: /home/dst/.steam/steam/appcache/appinfo.vdf
+[2026-05-02 12:18:35] ThreadedReadFromDisk: header version: 0x7564429
+[2026-05-02 12:18:35] ThreadedReadFromDisk: apps updated: 1
+[2026-05-02 12:18:35] CAppInfoCacheReadFromDiskThread took 29 milliseconds to initialize
+
+
+[2026-05-02 14:44:27] Client version: no bootstrapper found
+[2026-05-02 14:44:27] ThreadedReadFromDisk: loading appinfo cache from: /home/dst/.steam/steam/appcache/appinfo.vdf
+[2026-05-02 14:44:27] ThreadedReadFromDisk: header version: 0x7564429
+[2026-05-02 14:44:27] ThreadedReadFromDisk: apps updated: 1
+[2026-05-02 14:44:27] CAppInfoCacheReadFromDiskThread took 43 milliseconds to initialize
+
+
+[2026-05-02 14:44:27] Client version: no bootstrapper found
+[2026-05-02 14:44:27] ThreadedReadFromDisk: loading appinfo cache from: /home/dst/.steam/steam/appcache/appinfo.vdf
+[2026-05-02 14:44:27] ThreadedReadFromDisk: header version: 0x7564429
+[2026-05-02 14:44:27] ThreadedReadFromDisk: apps updated: 1
+[2026-05-02 14:44:27] CAppInfoCacheReadFromDiskThread took 24 milliseconds to initialize
+
+
+[2026-05-02 15:16:06] Client version: 1777415795
+[2026-05-02 15:16:06] ThreadedReadFromDisk: loading appinfo cache from: /home/dst/.steam/steam/appcache/appinfo.vdf
+[2026-05-02 15:16:06] ThreadedReadFromDisk: header version: 0x7564429
+[2026-05-02 15:16:06] ThreadedReadFromDisk: apps updated: 739
+[2026-05-02 15:16:06] CAppInfoCacheReadFromDiskThread took 80 milliseconds to initialize
+[2026-05-02 15:16:07] RequestAppInfoUpdate: AppIDs 7
+[2026-05-02 15:16:08] Packages changed: force all
+[2026-05-02 15:16:08] Apps changed: force all
+[2026-05-02 15:16:08] Change number 35588915->35615445, apps: 0/0, packages: 0/0
+[2026-05-02 15:16:08] Requesting 739 apps, 1 packages (meta data, 1024 prev attempts, expected 34 KB)
+[2026-05-02 15:16:08] Requested 67 app access tokens, 0 received, 67 denied
+[2026-05-02 15:16:08] Downloaded 19 apps via HTTP, 423 KB (80 KB compressed)
+[2026-05-02 15:16:08] Requesting 14 apps, 0 packages (full data, 1024 prev attempts, expected 85 KB)
+[2026-05-02 15:16:09] UpdatesJob: finished OK, apps updated 33 (507 KB), packages updated 0 (0 KB)
+[2026-05-02 15:16:09] RequestAppInfoUpdate: AppIDs 343050
+[2026-05-02 15:16:09] Requesting 1 apps, 0 packages (meta data, 1024 prev attempts, expected 0 KB)
+[2026-05-02 15:16:09] UpdatesJob: finished OK, apps updated 0 (0 KB), packages updated 0 (0 KB)
+[2026-05-02 15:16:14] ThreadedWriteToDisk: writing appinfo cache to: /home/dst/.steam/steam/appcache/appinfo.vdf
+[2026-05-02 15:16:14] App cache write succeeded /home/dst/.steam/steam/appcache/appinfo.vdf (739 apps, 2329 KB) in 67 ms
+
+
+[2026-05-02 15:20:11] Client version: no bootstrapper found
+[2026-05-02 15:20:11] ThreadedReadFromDisk: loading appinfo cache from: /home/dst/.steam/steam/appcache/appinfo.vdf
+[2026-05-02 15:20:11] ThreadedReadFromDisk: header version: 0x7564429
+[2026-05-02 15:20:11] ThreadedReadFromDisk: apps updated: 1
+[2026-05-02 15:20:11] CAppInfoCacheReadFromDiskThread took 24 milliseconds to initialize
+
+
+[2026-05-02 15:20:11] Client version: no bootstrapper found
+[2026-05-02 15:20:11] ThreadedReadFromDisk: loading appinfo cache from: /home/dst/.steam/steam/appcache/appinfo.vdf
+[2026-05-02 15:20:11] ThreadedReadFromDisk: header version: 0x7564429
+[2026-05-02 15:20:11] ThreadedReadFromDisk: apps updated: 1
+[2026-05-02 15:20:11] CAppInfoCacheReadFromDiskThread took 22 milliseconds to initialize
+
+
+[2026-05-02 18:00:52] Client version: 1777415795
+[2026-05-02 18:00:52] ThreadedReadFromDisk: loading appinfo cache from: /home/dst/.steam/steam/appcache/appinfo.vdf
+[2026-05-02 18:00:52] ThreadedReadFromDisk: header version: 0x7564429
+[2026-05-02 18:00:52] ThreadedReadFromDisk: apps updated: 739
+[2026-05-02 18:00:52] CAppInfoCacheReadFromDiskThread took 130 milliseconds to initialize
+[2026-05-02 18:00:53] RequestAppInfoUpdate: AppIDs 7
+[2026-05-02 18:00:54] Packages changed: force all
+[2026-05-02 18:00:54] Apps changed: 1519140=35616857,1861610=35616829,544550=35616511,2478470=35616028,393380=35615496,258550=35615477,
+[2026-05-02 18:00:54] Change number 35615445->35616938, apps: 6/1100, packages: 0/0
+[2026-05-02 18:00:54] Requesting 74 apps, 1 packages (meta data, 1024 prev attempts, expected 3 KB)
+[2026-05-02 18:00:54] Requested 67 app access tokens, 0 received, 67 denied
+[2026-05-02 18:00:54] Requesting 5 apps, 0 packages (full data, 1024 prev attempts, expected 29 KB)
+[2026-05-02 18:00:55] UpdatesJob: finished OK, apps updated 5 (29 KB), packages updated 0 (0 KB)
+[2026-05-02 18:00:55] RequestAppInfoUpdate: AppIDs 343050
+[2026-05-02 18:00:55] Requesting 1 apps, 0 packages (meta data, 1024 prev attempts, expected 0 KB)
+[2026-05-02 18:00:55] UpdatesJob: finished OK, apps updated 0 (0 KB), packages updated 0 (0 KB)
+[2026-05-02 18:01:00] ThreadedWriteToDisk: writing appinfo cache to: /home/dst/.steam/steam/appcache/appinfo.vdf
+[2026-05-02 18:01:00] App cache write succeeded /home/dst/.steam/steam/appcache/appinfo.vdf (739 apps, 2329 KB) in 65 ms
+
+
+[2026-05-02 18:02:27] Client version: 1777415795
+[2026-05-02 18:02:27] ThreadedReadFromDisk: loading appinfo cache from: /home/dst/.steam/steam/appcache/appinfo.vdf
+[2026-05-02 18:02:27] ThreadedReadFromDisk: header version: 0x7564429
+[2026-05-02 18:02:27] ThreadedReadFromDisk: apps updated: 739
+[2026-05-02 18:02:27] CAppInfoCacheReadFromDiskThread took 95 milliseconds to initialize
+[2026-05-02 18:02:29] RequestAppInfoUpdate: AppIDs 7
+[2026-05-02 18:02:29] Apps changed: 671610=35616940,
+[2026-05-02 18:02:29] Change number 35616938->35616959, apps: 1/20, packages: 0/3
+[2026-05-02 18:02:29] Requesting 69 apps, 0 packages (meta data, 1024 prev attempts, expected 3 KB)
+[2026-05-02 18:02:30] Requested 67 app access tokens, 0 received, 67 denied
+[2026-05-02 18:02:30] Downloaded 1 apps via HTTP, 9 KB (2 KB compressed)
+[2026-05-02 18:02:30] UpdatesJob: finished OK, apps updated 1 (9 KB), packages updated 0 (0 KB)
+[2026-05-02 18:02:30] RequestAppInfoUpdate: AppIDs 343050
+[2026-05-02 18:02:30] Requesting 1 apps, 0 packages (meta data, 1024 prev attempts, expected 0 KB)
+[2026-05-02 18:02:30] UpdatesJob: finished OK, apps updated 0 (0 KB), packages updated 0 (0 KB)
+[2026-05-02 18:02:35] ThreadedWriteToDisk: writing appinfo cache to: /home/dst/.steam/steam/appcache/appinfo.vdf
+[2026-05-02 18:02:35] App cache write succeeded /home/dst/.steam/steam/appcache/appinfo.vdf (739 apps, 2329 KB) in 264 ms
+
+
+[2026-05-02 18:14:29] Client version: 1777415795
+[2026-05-02 18:14:29] ThreadedReadFromDisk: loading appinfo cache from: /home/dst/.steam/steam/appcache/appinfo.vdf
+[2026-05-02 18:14:29] ThreadedReadFromDisk: header version: 0x7564429
+[2026-05-02 18:14:29] ThreadedReadFromDisk: apps updated: 739
+[2026-05-02 18:14:29] CAppInfoCacheReadFromDiskThread took 81 milliseconds to initialize
+[2026-05-02 18:14:30] RequestAppInfoUpdate: AppIDs 7
+[2026-05-02 18:14:30] Packages changed: force all
+[2026-05-02 18:14:30] Change number 35616959->35617080, apps: 0/90, packages: 0/0
+[2026-05-02 18:14:30] Requesting 68 apps, 1 packages (meta data, 1024 prev attempts, expected 3 KB)
+[2026-05-02 18:14:31] Requested 67 app access tokens, 0 received, 67 denied
+[2026-05-02 18:14:31] UpdatesJob: finished OK, apps updated 0 (0 KB), packages updated 0 (0 KB)
+[2026-05-02 18:14:31] RequestAppInfoUpdate: AppIDs 343050
+[2026-05-02 18:14:31] Requesting 1 apps, 0 packages (meta data, 1024 prev attempts, expected 0 KB)
+[2026-05-02 18:14:31] UpdatesJob: finished OK, apps updated 0 (0 KB), packages updated 0 (0 KB)
+
+
+[2026-05-02 18:18:40] Client version: no bootstrapper found
+[2026-05-02 18:18:40] ThreadedReadFromDisk: loading appinfo cache from: /home/dst/.steam/steam/appcache/appinfo.vdf
+[2026-05-02 18:18:40] ThreadedReadFromDisk: header version: 0x7564429
+[2026-05-02 18:18:40] ThreadedReadFromDisk: apps updated: 1
+[2026-05-02 18:18:40] CAppInfoCacheReadFromDiskThread took 34 milliseconds to initialize
+
+
+[2026-05-02 18:18:40] Client version: no bootstrapper found
+[2026-05-02 18:18:40] ThreadedReadFromDisk: loading appinfo cache from: /home/dst/.steam/steam/appcache/appinfo.vdf
+[2026-05-02 18:18:40] ThreadedReadFromDisk: header version: 0x7564429
+[2026-05-02 18:18:40] ThreadedReadFromDisk: apps updated: 1
+[2026-05-02 18:18:40] CAppInfoCacheReadFromDiskThread took 27 milliseconds to initialize
+
+
+[2026-05-03 03:04:43] Client version: no bootstrapper found
+[2026-05-03 03:04:43] ThreadedReadFromDisk: loading appinfo cache from: /home/dst/.steam/steam/appcache/appinfo.vdf
+[2026-05-03 03:04:43] ThreadedReadFromDisk: header version: 0x7564429
+[2026-05-03 03:04:43] ThreadedReadFromDisk: apps updated: 1
+[2026-05-03 03:04:43] CAppInfoCacheReadFromDiskThread took 28 milliseconds to initialize
+
+
+[2026-05-03 03:04:44] Client version: no bootstrapper found
+[2026-05-03 03:04:44] ThreadedReadFromDisk: loading appinfo cache from: /home/dst/.steam/steam/appcache/appinfo.vdf
+[2026-05-03 03:04:44] ThreadedReadFromDisk: header version: 0x7564429
+[2026-05-03 03:04:44] ThreadedReadFromDisk: apps updated: 1
+[2026-05-03 03:04:44] CAppInfoCacheReadFromDiskThread took 18 milliseconds to initialize
+
+
+[2026-05-04 03:26:26] Client version: no bootstrapper found
+[2026-05-04 03:26:26] ThreadedReadFromDisk: loading appinfo cache from: /home/dst/.steam/steam/appcache/appinfo.vdf
+[2026-05-04 03:26:26] ThreadedReadFromDisk: header version: 0x7564429
+[2026-05-04 03:26:26] ThreadedReadFromDisk: apps updated: 1
+[2026-05-04 03:26:26] CAppInfoCacheReadFromDiskThread took 23 milliseconds to initialize
+
+
+[2026-05-04 03:26:27] Client version: no bootstrapper found
+[2026-05-04 03:26:27] ThreadedReadFromDisk: loading appinfo cache from: /home/dst/.steam/steam/appcache/appinfo.vdf
+[2026-05-04 03:26:27] ThreadedReadFromDisk: header version: 0x7564429
+[2026-05-04 03:26:27] ThreadedReadFromDisk: apps updated: 1
+[2026-05-04 03:26:27] CAppInfoCacheReadFromDiskThread took 22 milliseconds to initialize
+
+
+[2026-05-04 11:26:34] Client version: no bootstrapper found
+[2026-05-04 11:26:34] ThreadedReadFromDisk: loading appinfo cache from: /home/dst/.steam/steam/appcache/appinfo.vdf
+[2026-05-04 11:26:34] ThreadedReadFromDisk: header version: 0x7564429
+[2026-05-04 11:26:34] ThreadedReadFromDisk: apps updated: 1
+[2026-05-04 11:26:34] CAppInfoCacheReadFromDiskThread took 25 milliseconds to initialize
+
+
+[2026-05-04 11:26:35] Client version: no bootstrapper found
+[2026-05-04 11:26:35] ThreadedReadFromDisk: loading appinfo cache from: /home/dst/.steam/steam/appcache/appinfo.vdf
+[2026-05-04 11:26:35] ThreadedReadFromDisk: header version: 0x7564429
+[2026-05-04 11:26:35] ThreadedReadFromDisk: apps updated: 1
+[2026-05-04 11:26:35] CAppInfoCacheReadFromDiskThread took 26 milliseconds to initialize
+
+
+[2026-05-04 14:21:38] Client version: no bootstrapper found
+[2026-05-04 14:21:38] ThreadedReadFromDisk: loading appinfo cache from: /home/dst/.steam/steam/appcache/appinfo.vdf
+[2026-05-04 14:21:38] ThreadedReadFromDisk: header version: 0x7564429
+
+
+[2026-05-04 14:21:38] Client version: no bootstrapper found
+[2026-05-04 14:21:38] ThreadedReadFromDisk: loading appinfo cache from: /home/dst/.steam/steam/appcache/appinfo.vdf
+[2026-05-04 14:21:38] ThreadedReadFromDisk: apps updated: 1
+[2026-05-04 14:21:38] CAppInfoCacheReadFromDiskThread took 24 milliseconds to initialize
+[2026-05-04 14:21:38] ThreadedReadFromDisk: header version: 0x7564429
+[2026-05-04 14:21:38] ThreadedReadFromDisk: apps updated: 1
+[2026-05-04 14:21:38] CAppInfoCacheReadFromDiskThread took 16 milliseconds to initialize
+
+
+[2026-05-04 15:00:00] Client version: no bootstrapper found
+[2026-05-04 15:00:00] ThreadedReadFromDisk: loading appinfo cache from: /home/dst/.steam/steam/appcache/appinfo.vdf
+[2026-05-04 15:00:00] ThreadedReadFromDisk: header version: 0x7564429
+[2026-05-04 15:00:00] ThreadedReadFromDisk: apps updated: 1
+[2026-05-04 15:00:00] CAppInfoCacheReadFromDiskThread took 22 milliseconds to initialize
+
+
+[2026-05-04 15:00:01] Client version: no bootstrapper found
+[2026-05-04 15:00:01] ThreadedReadFromDisk: loading appinfo cache from: /home/dst/.steam/steam/appcache/appinfo.vdf
+[2026-05-04 15:00:01] ThreadedReadFromDisk: header version: 0x7564429
+[2026-05-04 15:00:01] ThreadedReadFromDisk: apps updated: 1
+[2026-05-04 15:00:01] CAppInfoCacheReadFromDiskThread took 15 milliseconds to initialize
+
+
+[2026-05-05 11:27:01] Client version: no bootstrapper found
+[2026-05-05 11:27:01] ThreadedReadFromDisk: loading appinfo cache from: /home/dst/.steam/steam/appcache/appinfo.vdf
+[2026-05-05 11:27:01] ThreadedReadFromDisk: header version: 0x7564429
+[2026-05-05 11:27:01] ThreadedReadFromDisk: apps updated: 1
+[2026-05-05 11:27:01] CAppInfoCacheReadFromDiskThread took 21 milliseconds to initialize
+
+
+[2026-05-05 11:27:02] Client version: no bootstrapper found
+[2026-05-05 11:27:02] ThreadedReadFromDisk: loading appinfo cache from: /home/dst/.steam/steam/appcache/appinfo.vdf
+[2026-05-05 11:27:02] ThreadedReadFromDisk: header version: 0x7564429
+[2026-05-05 11:27:02] ThreadedReadFromDisk: apps updated: 1
+[2026-05-05 11:27:02] CAppInfoCacheReadFromDiskThread took 16 milliseconds to initialize
+
+
+[2026-05-08 09:10:30] Client version: no bootstrapper found
+[2026-05-08 09:10:30] ThreadedReadFromDisk: loading appinfo cache from: /home/dst/.steam/steam/appcache/appinfo.vdf
+[2026-05-08 09:10:30] ThreadedReadFromDisk: header version: 0x7564429
+[2026-05-08 09:10:30] ThreadedReadFromDisk: apps updated: 1
+[2026-05-08 09:10:30] CAppInfoCacheReadFromDiskThread took 24 milliseconds to initialize
+
+
+[2026-05-08 09:10:30] Client version: no bootstrapper found
+[2026-05-08 09:10:30] ThreadedReadFromDisk: loading appinfo cache from: /home/dst/.steam/steam/appcache/appinfo.vdf
+[2026-05-08 09:10:30] ThreadedReadFromDisk: header version: 0x7564429
+[2026-05-08 09:10:30] ThreadedReadFromDisk: apps updated: 1
+[2026-05-08 09:10:30] CAppInfoCacheReadFromDiskThread took 20 milliseconds to initialize
+
+
+[2026-05-08 09:13:30] Client version: 1778007485
+[2026-05-08 09:13:30] ThreadedReadFromDisk: loading appinfo cache from: /home/dst/.steam/steam/appcache/appinfo.vdf
+[2026-05-08 09:13:30] ThreadedReadFromDisk: header version: 0x7564429
+[2026-05-08 09:13:30] ThreadedReadFromDisk: apps updated: 739
+[2026-05-08 09:13:30] CAppInfoCacheReadFromDiskThread took 80 milliseconds to initialize
+[2026-05-08 09:13:32] RequestAppInfoUpdate: AppIDs 7
+[2026-05-08 09:13:32] Packages changed: force all
+[2026-05-08 09:13:32] Apps changed: force all
+[2026-05-08 09:13:32] Change number 35617080->35735799, apps: 0/0, packages: 0/0
+[2026-05-08 09:13:32] Requesting 739 apps, 1 packages (meta data, 1024 prev attempts, expected 34 KB)
+[2026-05-08 09:13:32] Requested 67 app access tokens, 0 received, 67 denied
+[2026-05-08 09:13:33] Downloaded 40 apps via HTTP, 690 KB (149 KB compressed)
+[2026-05-08 09:13:33] Requesting 40 apps, 0 packages (full data, 1024 prev attempts, expected 216 KB)
+[2026-05-08 09:13:33] UpdatesJob: finished OK, apps updated 80 (905 KB), packages updated 0 (0 KB)
+[2026-05-08 09:13:33] RequestAppInfoUpdate: AppIDs 343050
+[2026-05-08 09:13:33] Requesting 1 apps, 0 packages (meta data, 1024 prev attempts, expected 0 KB)
+[2026-05-08 09:13:33] UpdatesJob: finished OK, apps updated 0 (0 KB), packages updated 0 (0 KB)
+[2026-05-08 09:13:35] ThreadedWriteToDisk: writing appinfo cache to: /home/dst/.steam/steam/appcache/appinfo.vdf
+[2026-05-08 09:13:35] App cache write succeeded /home/dst/.steam/steam/appcache/appinfo.vdf (739 apps, 2328 KB) in 37 ms
+
+
+[2026-05-08 09:13:37] Client version: 1778007485
+[2026-05-08 09:13:37] ThreadedReadFromDisk: loading appinfo cache from: /home/dst/.steam/steam/appcache/appinfo.vdf
+[2026-05-08 09:13:37] ThreadedReadFromDisk: header version: 0x7564429
+[2026-05-08 09:13:37] ThreadedReadFromDisk: apps updated: 739
+[2026-05-08 09:13:37] CAppInfoCacheReadFromDiskThread took 67 milliseconds to initialize
+[2026-05-08 09:13:38] RequestAppInfoUpdate: AppIDs 7
+[2026-05-08 09:13:39] Change number 35735799->35735801, apps: 0/2, packages: 0/0
+[2026-05-08 09:13:39] Requesting 68 apps, 0 packages (meta data, 1024 prev attempts, expected 3 KB)
+[2026-05-08 09:13:39] Requested 67 app access tokens, 0 received, 67 denied
+[2026-05-08 09:13:39] UpdatesJob: finished OK, apps updated 0 (0 KB), packages updated 0 (0 KB)
+[2026-05-08 09:13:39] RequestAppInfoUpdate: AppIDs 343050
+[2026-05-08 09:13:39] Requesting 1 apps, 0 packages (meta data, 1024 prev attempts, expected 0 KB)
+[2026-05-08 09:13:40] UpdatesJob: finished OK, apps updated 0 (0 KB), packages updated 0 (0 KB)

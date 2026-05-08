@@ -44,6 +44,7 @@ DST_CLUSTER_TOKEN=pds-XXXXX...
 | `DST_CLUSTER_DISPLAY_NAME` | `My DST Server` | Name in server browser |
 | `DST_CLUSTER_PASSWORD` | (empty) | Join password (empty = public) |
 | `DST_CLUSTER_DESCRIPTION` | `A DST Server` | Browser description |
+| `DST_CLUSTER_KEY` | `defaultPass` | Shared key between shards |
 
 ### Gameplay Settings
 
@@ -101,8 +102,7 @@ https://steamcommunity.com/sharedfiles/filedetails/?id=2798599672
 docker-compose up -d              # Start
 docker-compose stop               # Stop (keeps data)
 docker-compose down               # Stop and remove containers
-docker-compose restart            # Restart
-docker-compose restart dst-master # Restart one shard
+docker-compose restart dst        # Restart server and reload env/.env
 ```
 
 ### View Logs
@@ -264,3 +264,4 @@ docker-compose restart               # Restart
 docker-compose run --rm mod-updater  # Update mods
 docker-compose exec dst-master bash  # Shell access
 ```
+

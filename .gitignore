@@ -1,3 +1,4 @@
+docker/env/.env
 native-macos/steamcmd/
 native-macos/dst_server/
 native-macos/.DS_Store
