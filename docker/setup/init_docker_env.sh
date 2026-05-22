@@ -64,8 +64,8 @@ DST_GAME_MODE=endless
 # Maximum number of players
 DST_MAX_PLAYERS=6
 
-# World size: small, medium, or large
-DST_WORLD_SIZE=small
+# World size: small, medium, or large (affects CPU usage and world generation)
+DST_WORLD_SIZE=medium
 
 # Server tick rate (default: 15)
 DST_TICK_RATE=15
@@ -116,6 +116,13 @@ else
 EOF
   echo "   ✅ Created env/mods.txt (add your mod IDs)"
 fi
+
+# Check world generation config files
+for file in master_worldgenoverride.txt caves_worldgenoverride.txt; do
+  if [[ ! -f "env/$file" ]]; then
+    echo "⚠️  env/$file missing (will use existing config or fail)"
+  fi
+done
 
 # Create admin/whitelist/blocklist files
 for file in admins.txt whitelist.txt blocklist.txt; do

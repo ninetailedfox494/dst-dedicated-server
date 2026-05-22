@@ -52,10 +52,12 @@ DST_CLUSTER_TOKEN=pds-XXXXX...
 |----------|---------|---------|
 | `DST_GAME_MODE` | `endless` | `endless`, `survival`, `wilderness` |
 | `DST_MAX_PLAYERS` | `6` | 1–64 |
-| `DST_WORLD_SIZE` | `small` | `small`, `medium`, `large` |
+| `DST_WORLD_SIZE` | `medium` | `small`, `medium`, `large` (affects world generation) |
 | `DST_PVP` | `false` | `true` or `false` |
 | `DST_PAUSE_WHEN_EMPTY` | `true` | Pause with no players |
 | `DST_TICK_RATE` | `15` | 10–30 (higher = more CPU) |
+
+> **💡 World Size Impact**: `small` = ~30-40% less CPU usage, `large` = significantly more CPU load. For better performance, use `small` or `medium`.
 
 ### Access Control Files
 
@@ -64,6 +66,15 @@ DST_CLUSTER_TOKEN=pds-XXXXX...
 | `env/admins.txt` | Admin Klei user IDs (one per line) |
 | `env/whitelist.txt` | Allowed players only (empty = all) |
 | `env/blocklist.txt` | Banned players |
+
+### World Generation Files
+
+| File | Purpose |
+|------|---------|
+| `env/master_worldgenoverride.txt` | Surface world settings (resources, mobs, events) |
+| `env/caves_worldgenoverride.txt` | Cave world settings (cave-specific spawns) |
+
+> **💡 Tip**: Edit these files to customize world generation, resource spawns, mob density, and weather frequency. Changes apply on next world regeneration.
 
 ---
 

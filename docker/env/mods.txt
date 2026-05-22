@@ -9,6 +9,8 @@ Mods = {
   2189004162 # Insight (Show Me+)
   2798599672 # Extra Equip Slots_3
   1207269058 # Simple Health Bar DST
+  2847908822 # Performance Pack_Server Lag Fix
+  3050607025 # Lag Remover
 }
 
 #Overwrite Configure Mods
@@ -37,4 +39,34 @@ Overwrite_Mods = {
     },
     enabled = true 
   }, 
+  -- Cấu hình Mod Increased Stack size
+  ["workshop-374550642"] = {
+        configuration_options = {
+            FORCE_STACKSIZES = false,
+            STACK_SIZE_LARGEITEM = 99,
+            STACK_SIZE_MEDITEM = 99,
+            STACK_SIZE_PELLET = 120,
+            STACK_SIZE_SMALLITEM = 99,
+            STACK_SIZE_TINYITEM = 99
+        },
+        enabled = true
+    },
+  -- Cấu hình Mod Epic Healthbar
+  ["workshop-1185229307"] = {
+        configuration_options = {
+            CAMERA = true,
+            CAPTURE = false,
+            DAMAGE_NUMBERS = true,
+            DAMAGE_RESISTANCE = true,
+            FRAME_PHASES = true,
+            GLOBAL = true,
+            GLOBAL_NUMBERS = true,
+            HEADER_CLIENT = false,
+            HEADER_SERVER = false,
+            HORIZONTAL_OFFSET = 0,
+            TAG = "_HEALTH",
+            WETNESS_METER = true
+        },
+        enabled = true
+    },
 }
