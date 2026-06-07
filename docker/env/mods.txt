@@ -11,6 +11,7 @@ Mods = {
   1207269058 # Simple Health Bar DST
   2847908822 # Performance Pack_Server Lag Fix
   3050607025 # Lag Remover
+  1185229307 # Epic Healthbar
 }
 
 #Overwrite Configure Mods
