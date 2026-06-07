@@ -232,9 +232,9 @@ bash scripts/status.sh >> diagnostics.txt
 ### Container Won't Start
 
 ```bash
-docker-compose logs dst-master
+docker compose logs dst
 cat env/.env | grep DST_CLUSTER_TOKEN
-docker-compose up -d --build
+docker compose up -d --build
 ```
 
 ### Permission Issues (Docker)
@@ -251,8 +251,8 @@ ls -la data/
 sudo chown -R 1000:1000 data/
 
 # Restart
-docker-compose down
-docker-compose up -d
+docker compose down
+docker compose up -d
 ```
 
 **Alternative (less secure):**
@@ -276,10 +276,10 @@ deploy:
 ### Mods Not Loading (Docker)
 
 ```bash
-docker-compose logs dst-master | grep -i mod
+docker compose logs dst | grep -i mod
 ls data/mods/workshop_*/
-docker-compose run --rm mod-updater
-docker-compose restart
+docker compose run --rm mod-updater
+docker compose restart dst
 ```
 
 ---

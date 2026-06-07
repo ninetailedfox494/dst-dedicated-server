@@ -1,5 +1,3 @@
-version: "3.8"
-
 services:
   dst:
     build: .
@@ -55,4 +53,3 @@ services:
     profiles:
       - tools
     user: "0:0"
-

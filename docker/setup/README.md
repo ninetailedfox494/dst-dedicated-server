@@ -27,8 +27,8 @@ bash init_docker_env.sh
 
 **After running:**
 1. Edit `env/.env` with your cluster token
-2. Run `docker-compose up -d` from parent directory
-3. Check `docker-compose logs -f` for startup
+2. Run `docker compose up -d` from parent directory
+3. Check `docker compose logs -f` for startup
 
 ## Quick Start
 
@@ -40,7 +40,7 @@ bash setup/init_docker_env.sh
 nano env/.env
 
 # Then run
-docker-compose up -d
+docker compose up -d
 ```
 
 ## Documentation

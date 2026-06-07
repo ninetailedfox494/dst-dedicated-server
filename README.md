@@ -22,7 +22,13 @@ Run a DST dedicated server on **macOS (native)** or **any platform (Docker)**.
 cd docker
 cp env/.env.template env/.env
 # Edit env/.env with your cluster token
-docker-compose up -d
+docker compose up -d
+```
+
+### Ubuntu 24.04 VM Bootstrap
+
+```bash
+bash install_tool.sh
 ```
 
 👉 **[Complete Docker Guide](docker/README.md)**

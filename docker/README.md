@@ -6,7 +6,7 @@ Complete guide for running Don't Starve Together Dedicated Server with Docker.
 
 ```bash
 docker --version          # 20.10+
-docker-compose --version  # 2.0+
+docker compose version    # 2.0+
 ```
 
 ## Quick Start (5 Minutes)
@@ -19,10 +19,10 @@ bash setup/init_docker_env.sh
 nano env/.env             # Add your cluster token
 
 # 3. Start
-docker-compose up -d
+docker compose up -d
 
 # 4. Watch logs
-docker-compose logs -f
+docker compose logs -f
 ```
 
 ---
@@ -91,8 +91,8 @@ nano env/mods.txt
 # 374550642     # Increased Stack Size
 
 # Download and apply
-docker-compose run --rm mod-updater
-docker-compose restart dst-master dst-caves
+docker compose run --rm mod-updater
+docker compose restart dst
 ```
 
 ### Find Mod IDs
@@ -110,43 +110,43 @@ https://steamcommunity.com/sharedfiles/filedetails/?id=2798599672
 ### Start/Stop/Restart
 
 ```bash
-docker-compose up -d              # Start
-docker-compose stop               # Stop (keeps data)
-docker-compose down               # Stop and remove containers
-docker-compose restart dst        # Restart server and reload env/.env
+docker compose up -d              # Start
+docker compose stop               # Stop (keeps data)
+docker compose down               # Stop and remove containers
+docker compose restart dst        # Restart server and reload env/.env
 ```
 
 ### View Logs
 
 ```bash
-docker-compose logs -f            # All services
-docker-compose logs -f dst-master # Master only
-docker-compose logs --tail=50     # Last 50 lines
+docker compose logs -f      # All services
+docker compose logs -f dst  # Server only
+docker compose logs --tail=50
 ```
 
 ### Check Status
 
 ```bash
-docker-compose ps                 # Container status
-docker stats dst-master dst-caves # Resource usage
+docker compose ps                 # Container status
+docker stats "$(docker compose ps -q dst)" # Resource usage
 ```
 
 ### Backup World
 
 ```bash
 # Create backup
-docker-compose exec dst-master tar -czf /tmp/backup.tar.gz \
+docker compose exec dst tar -czf /tmp/backup.tar.gz \
   /home/dst/.klei/DoNotStarveTogether
 
 # Copy to host
-docker cp $(docker-compose ps -q dst-master):/tmp/backup.tar.gz ./backups/
+docker cp "$(docker compose ps -q dst)":/tmp/backup.tar.gz ./backups/
 ```
 
 ### Update Mods
 
 ```bash
-docker-compose run --rm mod-updater
-docker-compose restart dst-master dst-caves
+docker compose run --rm mod-updater
+docker compose restart dst
 ```
 
 ---
@@ -172,10 +172,10 @@ ports:
 
 ## Container Architecture
 
-**Three containers:**
-1. **dst-master** - Master shard (world gen, saves)
-2. **dst-caves** - Caves shard (connects to master)
-3. **mod-updater** - On-demand mod downloads
+**Three services:**
+1. **dst** - Main DST runtime (starts both Master + Caves shards)
+2. **mod-updater** - On-demand mod downloads
+3. **access-manager** - On-demand access list sync
 
 **Shared volumes:**
 ```
@@ -200,25 +200,25 @@ kill -9 <PID>
 ### Mods Not Loading
 
 ```bash
-docker-compose logs dst-master | grep -i mod
+docker compose logs dst | grep -i mod
 ls data/mods/workshop_*/
-docker-compose run --rm mod-updater
-docker-compose restart
+docker compose run --rm mod-updater
+docker compose restart dst
 ```
 
 ### Container Won't Start
 
 ```bash
-docker-compose logs dst-master
+docker compose logs dst
 cat env/.env | grep DST_CLUSTER_TOKEN
-docker-compose up -d --build
+docker compose up -d --build
 ```
 
 ### Permission Issues
 
 ```bash
 sudo chown -R $(whoami):$(whoami) data/
-docker-compose up -d
+docker compose up -d
 ```
 
 See **[../TROUBLESHOOTING.md](../TROUBLESHOOTING.md)** for more solutions.
@@ -267,12 +267,11 @@ docker/
 
 ```bash
 # Essential commands
-docker-compose up -d                 # Start
-docker-compose down                  # Stop
-docker-compose ps                    # Status
-docker-compose logs -f               # Logs
-docker-compose restart               # Restart
-docker-compose run --rm mod-updater  # Update mods
-docker-compose exec dst-master bash  # Shell access
+docker compose up -d                 # Start
+docker compose down                  # Stop
+docker compose ps                    # Status
+docker compose logs -f               # Logs
+docker compose restart dst           # Restart
+docker compose run --rm mod-updater  # Update mods
+docker compose exec dst bash         # Shell access
 ```
-
