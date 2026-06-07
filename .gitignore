@@ -1,4 +1,3 @@
-docker/env/.env
 # Bỏ qua dữ liệu người dùng Steam
 docker/steam/steam/userdata/
 
