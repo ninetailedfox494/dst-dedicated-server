@@ -118,6 +118,7 @@ echo "${DST_CLUSTER_TOKEN}" > "${DST_CLUSTER_DIR}/cluster_token.txt"
 # Set default values for optional environment variables
 export DST_GAME_MODE="${DST_GAME_MODE:-endless}"
 export DST_MAX_PLAYERS="${DST_MAX_PLAYERS:-6}"
+export DST_WORLD_SIZE="${DST_WORLD_SIZE:-medium}"
 export DST_PVP="${DST_PVP:-false}"
 export DST_PAUSE_WHEN_EMPTY="${DST_PAUSE_WHEN_EMPTY:-true}"
 export DST_VOTE_ENABLED="${DST_VOTE_ENABLED:-true}"
@@ -168,6 +169,15 @@ master_server_port = 27016
 authentication_port = 8766
 EOF
 
+# Generate Master worldgenoverride.lua (respect DST_WORLD_SIZE)
+cat > "${MASTER_DIR}/worldgenoverride.lua" <<EOF
+return {
+    override_enabled = true,
+    preset = "DST_FOREST",
+    world_size = "${DST_WORLD_SIZE}",
+}
+EOF
+
 # Caves
 cat > "${CAVES_DIR}/server.ini" <<EOF
 [NETWORK]
@@ -178,6 +188,15 @@ name = Caves
 [STEAM]
 master_server_port = 27017
 authentication_port = 8767
+EOF
+
+# Generate Caves worldgenoverride.lua (respect DST_WORLD_SIZE)
+cat > "${CAVES_DIR}/worldgenoverride.lua" <<EOF
+return {
+    override_enabled = true,
+    preset = "DST_CAVE",
+    world_size = "${DST_WORLD_SIZE}",
+}
 EOF
 
 # ---------------- MOD ----------------
