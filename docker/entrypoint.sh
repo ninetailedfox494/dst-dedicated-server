@@ -174,7 +174,9 @@ cat > "${MASTER_DIR}/worldgenoverride.lua" <<EOF
 return {
     override_enabled = true,
     preset = "DST_FOREST",
-    world_size = "${DST_WORLD_SIZE}",
+    overrides = {
+        world_size = "${DST_WORLD_SIZE}",
+    },
 }
 EOF
 
@@ -195,7 +197,9 @@ cat > "${CAVES_DIR}/worldgenoverride.lua" <<EOF
 return {
     override_enabled = true,
     preset = "DST_CAVE",
-    world_size = "${DST_WORLD_SIZE}",
+    overrides = {
+        world_size = "${DST_WORLD_SIZE}",
+    },
 }
 EOF
 

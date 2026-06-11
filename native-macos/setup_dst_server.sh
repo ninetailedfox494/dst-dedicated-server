@@ -270,7 +270,9 @@ EOF
 return {
     override_enabled = true,
     preset = "DST_FOREST",
-    world_size = "${DST_WORLD_SIZE}",
+    overrides = {
+        world_size = "${DST_WORLD_SIZE}",
+    },
 }
 EOF
     log "✅ Master/worldgenoverride.lua created"
@@ -280,7 +282,9 @@ EOF
 return {
     override_enabled = true,
     preset = "DST_CAVE",
-    world_size = "${DST_WORLD_SIZE}",
+    overrides = {
+        world_size = "${DST_WORLD_SIZE}",
+    },
 }
 EOF
     log "✅ Caves/worldgenoverride.lua created"
